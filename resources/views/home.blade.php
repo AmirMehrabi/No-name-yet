@@ -5,10 +5,10 @@
 @section('content')
 <div class="container">
     <div class="row content-justify-center">
-        <div class="col-md-8 ">
+        <div class="col col-md-8 content-justify-center">
             <div class="panel panel-default text-right">
                 <div class="panel-heading">داشبورد</div>
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="">
                   <div class="card-body">
                     <h5 class="card-title">داشبورد</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>

@@ -51,6 +51,7 @@
                     <div class="row justify-content-center">
                       <div class="col col-5 mt-4">
                         <button type="submit" class="btn btn-block btn-success">ورود</button>
+                        <a href="{{url('login/google/redirect')}}" class="btn btn-block btn-outline-warning"><i class="fab fa-google"></i> ورود با گوگل </a>
                         <button type="submit" class="btn btn-block btn-default text-primary">ثبت نام</button>
                       </div>
                     </div>
