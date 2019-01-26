@@ -44,6 +44,7 @@
               <hr>
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد</p>
             </div>
+            <hr>
 
 
           </div>
@@ -60,6 +61,44 @@
                 <a class="dropdown-item" href="#">ناتمام</a>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h5 font-weight-bold rtl text-right">نقدهای این کتاب:</h2>
+            @foreach ($book->reviews as $review)
+            <div class="card text-right my-2">
+
+
+                    <div class="card-body">
+                        <div class="row my-2">
+                            <div class="col-md-2">
+                                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                                <p class="text-secondary text-center">{{$review->created_at->diffForHumans()}}</p>
+                            </div>
+                            <div class="col-md-10">
+                                <p>
+                                    <a class="" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>{{$review->owner->name}}</strong></a>
+                                    <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                      <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-left"><i class="text-warning fa fa-star"></i></span>
+
+                               </p>
+                               <div class="clearfix"></div>
+                               <p>
+                                 {{$review->body}}
+                               </p>
+                                <p>
+                                    <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> کامنت</a>
+                                    <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> لایک</a>
+                               </p>
+                            </div>
+                        </div>
+                    </div>
+            	</div>
+            @endforeach
           </div>
         </div>
       </div>
