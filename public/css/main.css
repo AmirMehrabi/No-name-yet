@@ -446,3 +446,8 @@ label.login {
     #fad071 50%, #fad071 75%,
     #c4e17f 75%, #c4e17f 100%) 10;
   }
+
+  .similar-book-img {
+    height: 152px;
+    object-fit: cover;
+  }

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('book/show', function(){
+  return view('book.show');
+});
+
 Route::resource('book', 'BookController');
 
 
