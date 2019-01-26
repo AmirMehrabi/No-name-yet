@@ -145,7 +145,7 @@ background-size: cover;
 }
 
 /* -- label styles ---------------------------------- */
-label {
+label.login {
   position: absolute;
   top: -18px;
   color: #999;
