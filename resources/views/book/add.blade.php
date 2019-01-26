@@ -15,14 +15,18 @@
                   {{ Form::token() }}
                   <fieldset class="form-group">
                     <label for=""></label>
-                    <input type="text" name="name" class="form-control rtl" id="" placeholder="نام کتاب">
-
+                    <input type="text" name="title" class="form-control rtl" id="" placeholder="نام کتاب">
+                    <span class="help-blocked font-weight-small text-muted text-danger">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span>
                   </fieldset>
 
                   <fieldset class="form-group">
                     <label for=""></label>
                     <input name="author" type="text" class="form-control rtl" id="" placeholder="نویسنده">
-
+                    <span class="help-blocked font-weight-small text-muted text-danger">
+                        <strong>{{ $errors->first('author') }}</strong>
+                    </span>
                   </fieldset>
 
 
@@ -53,7 +57,11 @@
                   <fieldset class="form-group">
                     <label for="">توضیحات</label>
                     <textarea name="description" class="form-control rtl" rows="5" id="comment"></textarea>
+                    <span class="help-blocked font-weight-small text-muted text-danger">
+                        <strong>{{ $errors->first('description') }}</strong>
+                    </span>
                   </fieldset>
+                  <input name="user_id" type="text" value="1" class="form-control rtl" id="" placeholder="سال نشر">
 
                   {!! Form::submit('ثبت کتاب', ['class' => 'btn btn-success btn-block']) !!}
                   {!! Form::close() !!}

@@ -35,7 +35,14 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+      $validatedData = $request->validate([
+          'title' => 'required|unique:books',
+          'author' => 'required',
+          'description' => 'required',
+      ]);
+      $new_book = Book::create($request->all());
+
+      dd($new_book);
     }
 
     /**
