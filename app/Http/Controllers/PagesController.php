@@ -16,7 +16,7 @@ class PagesController extends Controller
     }
 
     public function crawler()
-    {
+    { 
         $starttime = microtime(true);
         $client = new Client();
         for ($i = 213; $i < 250; $i++) {
