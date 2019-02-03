@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('book/show', function(){
@@ -30,3 +30,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/login/google/redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('/auth/google/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+Route::get('/crawler', 'PagesController@crawler');

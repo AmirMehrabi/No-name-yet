@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@include('layouts.navbar')
+@include('partial.navbar')
 
 @section('content')
   <div class="container">

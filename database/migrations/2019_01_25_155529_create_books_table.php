@@ -17,9 +17,10 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
-            $table->string('image_src')->nullable();
+            $table->text('image_src')->nullable();
             $table->string('author');
             $table->string('translator')->nullable();
+            $table->string('category')->nullable();
             $table->string('isbn')->nullable();
             $table->string('publisher')->nullable();
             $table->string('number_of_pages')->nullable();
