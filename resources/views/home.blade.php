@@ -2,6 +2,18 @@
 
 @section('title', 'صفحه‌ی نخست')
 
+<style media="screen">
+  body {
+    background: linear-gradient(to right, rgba(229,229,229,1) 0%,rgba(229,229,229,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%),
+    url('../img/bg.png');
+    height: 100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+  }
+</style>
+
 @include('partial.navbar')
 
 @section('content')

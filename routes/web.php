@@ -21,6 +21,8 @@ Route::get('book/show', function(){
 
 Route::resource('book', 'BookController');
 
+Route::resource('review', 'ReviewController');
+
 
 
 Auth::routes();

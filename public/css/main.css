@@ -1,12 +1,6 @@
 
 body {
   font-family: 'Samim';
-  background: linear-gradient(to right, rgba(229,229,229,1) 0%,rgba(229,229,229,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%),
-  url('../img/bg.png');
-  height: 100%; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 
 }
 
@@ -180,6 +174,13 @@ background-size: cover;
   color: #908852;
 }
 
+.bg-daneh {
+  background: #908852;
+}
+
+.color-daneh {
+  color: #908852;
+}
 .nav-link {
   color: #212529;
 }
@@ -199,4 +200,44 @@ width: 100%;
 .navbar-light .navbar-nav .active>.nav-link {
   color: #908852;
   border-bottom: 2px solid #908852;
+}
+
+.book-rating {
+  font-size: 55%;
+  float: left;
+  direction: rtl;
+}
+
+.book-meta-data {
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+}
+
+.review-profile-pic {
+  max-width: 40px;
+}
+
+.review {
+
+}
+
+.nav-item-icon {
+  font-size: 125%;
+}
+
+.slider {
+  right: 9%;
+  position: fixed;
+  width: 70%;
+  height: 50%;
+  bottom: 0;
+  overflow: hidden;
+  /* background-color: #a7a7a773; */
+  transition: all 500ms;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.slider.close {
+  bottom: -10%;
+  height: 0;
 }

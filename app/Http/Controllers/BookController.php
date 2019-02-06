@@ -14,7 +14,12 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $starttime = microtime(true);
+        $books = Book::take(2000)->get();
+        $endtime = microtime(true); // Bottom of page
+
+        print_r($books);
+        printf("Page loaded in %f seconds", $endtime - $starttime);
     }
 
     /**

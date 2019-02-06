@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use Illuminate\Http\Request;
+use Auth;
+use Redirect;
 
 class ReviewController extends Controller
 {
@@ -35,7 +37,12 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = new Review();
+        $review->user_id = Auth::user()->id;
+        $review->book_id = $request->input('book_id');
+        $review->body = $request->input('body');
+        $review->save();
+        return redirect::back();
     }
 
     /**

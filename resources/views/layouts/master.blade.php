@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/fonts/fonts.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    @yield('header-assets')
 
   </head>
   <body>
@@ -25,8 +26,11 @@
       @yield('footer')
 
 
-    <script src="{{URL::asset('js/jquery-3.3.1.slim.min.js')}}" ></script>
+    <script src="{{URL::asset('js/jquery.min.js')}}" ></script>
     <script src="{{URL::asset('js/popper.min.js')}}"  ></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}" ></script>
+
+    @yield('footer-assets')
+
   </body>
 </html>
