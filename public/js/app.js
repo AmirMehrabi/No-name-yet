@@ -44391,7 +44391,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.alert-flash {\n  position: fixed !IMPORTANT;\n  right: 25px;\n  bottom: 25px;\n  z-index: 1000;\n}\n", ""]);
+exports.push([module.i, "\n.alert-flash {\n  position: fixed !IMPORTANT;\n  right: 25px;\n  bottom: 25px;\n  z-index: 100;\n}\n", ""]);
 
 // exports
 
@@ -44564,9 +44564,15 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue__);
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['attributes'],
+
+    components: { Favorite: __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default.a },
+
     data: function data() {
         return {
             editing: false,
@@ -44674,7 +44680,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -44692,23 +44698,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['reply'],
+  props: ['review'],
 
   data: function data() {
     return {
-      favoritesCount: 10
+      favoritesCount: this.review.favoritesCount,
+      isFavorited: this.review.isFavorited
     };
   },
 
 
+  computed: {
+    classes: function classes() {
+      return ['btn btn-sm', this.isFavorited ? 'btn-danger' : 'btn-light text-muted'];
+    }
+  },
+
   methods: {
     toggle: function toggle() {
       if (this.isFavorited) {
-        axios.delete('reviews/' + this.reply.id + '/favorites');
+        axios.delete('/reviews/' + this.review.id + '/favorites');
+        this.isFavorited = false;
+        this.favoritesCount--;
       } else {
-        axios.delete('reviews/' + this.reply.id + '/favorites');
+        axios.post('/reviews/' + this.review.id + '/favorites');
+
+        this.isFavorited = true;
+        this.favoritesCount++;
       }
     }
   }
@@ -44722,23 +44741,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "btn btn-default",
-      attrs: { type: "submit" },
-      on: { click: _vm.toggle }
-    },
-    [
-      _c("a", { staticClass: "text-muted", attrs: { href: "" } }, [
-        _c("span", { domProps: { textContent: _vm._s(_vm.favoritesCount) } }),
-        _vm._v(" "),
-        _c("i", { staticClass: "fa fa-heart" })
-      ])
-    ]
-  )
+  return _c("button", { class: _vm.classes, on: { click: _vm.toggle } }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("span", { domProps: { textContent: _vm._s(_vm.favoritesCount) } })
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fa fa-heart" })])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

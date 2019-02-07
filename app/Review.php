@@ -8,6 +8,8 @@ class Review extends Model
 {
     protected $guarded = [];
 
+    protected $appends = ['favoritesCount', 'isFavorited'];
+
 
     public function owner()
     {
@@ -25,8 +27,23 @@ class Review extends Model
       }
     }
 
+    public function unfavorite(){
+      $attributes = ['user_id' => auth()->id()];
+      return $this->favorites()->where($attributes)->delete();
+    }
+
     public function isFavorited(){
       return $this->favorites()->where('user_id', auth()->id())->exists();
     }
+
+    public function getIsFavoritedAttribute() {
+      return $this->isFavorited();
+    }
+
+    public function getFavoritesCountAttribute(){
+      return $this->favorites->count();
+    }
+
+
 
 }

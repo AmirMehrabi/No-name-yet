@@ -21,5 +21,10 @@ class FavoritesController extends Controller
       //   'favorited_id' => $review->id,
       //   'favorited_type' => get_class($review)
       // ]);
+      
+    }
+
+    public function destroy(Review $review){
+      $review->unfavorite();
     }
 }

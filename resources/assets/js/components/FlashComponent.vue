@@ -48,6 +48,7 @@
     position: fixed !IMPORTANT;
     right: 25px;
     bottom: 25px;
-    z-index: 1000;
+    z-index: 100;
   }
 </style>
+ 
