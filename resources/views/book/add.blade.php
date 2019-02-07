@@ -12,7 +12,7 @@
                 <h5 class="card-title">افزودن کتاب</h5>
                 <h6 class="card-subtitle mb-2 text-muted">از این قسمت کتاب خود را به سیستم اضافه کنید</h6>
                   {!! Form::open(['route' => 'book.store', 'method' => 'POST']) !!}
-                  {{ Form::token() }}
+                  {{ Form::token() }} 
                   <fieldset class="form-group">
                     <label for=""></label>
                     <input type="text" name="title" class="form-control rtl" id="" placeholder="نام کتاب">

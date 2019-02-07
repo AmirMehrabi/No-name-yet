@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('flash-component', require('./components/FlashComponent.vue'));
+Vue.component('review', require('./components/ReviewComponent.vue'));
+
 Vue.component('favorite', require('./components/FavoriteComponent.vue'));
 
 const app = new Vue({
