@@ -22,6 +22,7 @@ Route::get('book/show', function(){
 Route::resource('book', 'BookController');
 
 Route::resource('review', 'ReviewController');
+Route::post('reviews/{review}/favorites', 'FavoritesController@store');
 
 
 

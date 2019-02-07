@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>دانه | @yield('title')</title>
 
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}" >
@@ -17,8 +19,11 @@
 
 
 
-
+    <div id="app">
+      <flash-component message="{{ session('flash') }}"></flash-component>
       @yield('content')
+    </div>
+
 
 
 
@@ -29,6 +34,7 @@
     <script src="{{URL::asset('js/jquery.min.js')}}" ></script>
     <script src="{{URL::asset('js/popper.min.js')}}"  ></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}" ></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('footer-assets')
 

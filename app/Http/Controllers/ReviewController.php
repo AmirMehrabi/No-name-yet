@@ -42,7 +42,7 @@ class ReviewController extends Controller
         $review->book_id = $request->input('book_id');
         $review->body = $request->input('body');
         $review->save();
-        return redirect::back();
+        return redirect::back()->with('flash', 'نقد شما به درستی در سیستم ثبت شد');
     }
 
     /**

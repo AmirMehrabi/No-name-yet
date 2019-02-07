@@ -5,15 +5,12 @@
 @include('partial.main-nav')
 
 @section('header-assets')
-<link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor.css">
-</link>
-<link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor-contents.css">
-</link>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.2/codemirror.css">
-</link>
+
 @endsection
 
 @section('content')
+
+
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
@@ -116,7 +113,6 @@
             <button class="btn btn-success btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               افزودن به لیست
             </button>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             @if (Auth::user())
               <button class="btn btn-light border-0 btn-block mt-1  trigger">
                 نقد این کتاب
@@ -204,7 +200,10 @@
 
                   </div>
                   <div class=" bd-highlight">
-                    <a class="  text-muted" href=""> ۴۴ <i class="fa fa-heart"></i></a>
+                    <favorite :review="{{$review}}"></favorite>
+                    {{-- <form method="POST" action="/reviews/{{$review->id}}/favorites">
+                      {!! csrf_field() !!}
+                    </form> --}}
 
                   </div>
                 </div>
@@ -259,6 +258,7 @@
 
                   </div>
                   <div class=" bd-highlight">
+
                     <a class="  text-muted" href=""> ۴۴ <i class="fa fa-heart"></i></a>
 
                   </div>
@@ -302,26 +302,6 @@
 @endsection
 
 @section('footer-assets')
-<script src="http://uicdn.toast.com/tui-editor/latest/tui-editor-Editor-all.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
