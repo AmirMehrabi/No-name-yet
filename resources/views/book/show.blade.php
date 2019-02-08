@@ -10,7 +10,6 @@
 
 @section('content')
 
-
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
@@ -158,7 +157,7 @@
 
 
 
-
+          {{-- <reviews :data="{{ $book->reviews }}"></reviews> --}}
             @foreach ($book->reviews as $review)
               @include('partial.review')
             @endforeach
@@ -187,8 +186,6 @@
   <button type="submit" class="btn btn-primary">ثبت نقد</button>
   {!! Form::close() !!}
 </div>
-
-
 @endsection
 
 @section('footer-assets')
