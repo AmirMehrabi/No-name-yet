@@ -52,7 +52,8 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Review $review)
-    {
+    {   
+        $review = Review::where('id', $review->id)->with('owner')->first();
         return view('review.show', compact('review'));
     }
 

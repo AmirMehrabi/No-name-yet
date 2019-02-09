@@ -19,10 +19,19 @@ Vue.component('flash-component', require('./components/FlashComponent.vue'));
 
 Vue.component('book-view', require('./pages/BookComponent.vue'));
 
+Vue.component('review-template', require('./pages/Review.vue'));
+
+
 Vue.component('review', require('./components/ReviewComponent.vue'));
 
+Vue.component('reply', require('./components/ReplyComponent.vue'));
+
 Vue.component('favorite', require('./components/FavoriteComponent.vue'));
+
+Vue.component('favorite-reply', require('./components/FavoriteReplyComponent.vue'));
+
 
 const app = new Vue({
     el: '#app'
 });
+

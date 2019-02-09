@@ -1,9 +1,11 @@
 <script>
     import Favorite from './FavoriteComponent.vue';
+    import NewReply from './NewReplyComponent.vue';
+
     export default {
         props: ['attributes'],
 
-        components: { Favorite },
+        components: { Favorite, NewReply },
 
         data() {
             return {

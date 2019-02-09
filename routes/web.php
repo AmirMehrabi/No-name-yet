@@ -23,10 +23,14 @@ Route::resource('book', 'BookController');
 
 Route::resource('review', 'ReviewController');
 Route::patch('/review/{review}', 'ReviewController@update');
-Route::post('reviews/{review}/favorites', 'FavoritesController@store');
-Route::delete('reviews/{review}/favorites', 'FavoritesController@destroy');
+Route::post('review/{review}/favorites', 'FavoritesController@store');
+Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 
 
+Route::resource('reply', 'ReplyController');
+Route::patch('/reply/{reply}', 'ReplyController@update');
+Route::post('/reply/{reply}/favorites', 'FavoritesController@storeReplyFavorite');
+Route::delete('/reply/{reply}/favorites', 'FavoritesController@destroyReplyFavorite');
 
 
 Auth::routes();

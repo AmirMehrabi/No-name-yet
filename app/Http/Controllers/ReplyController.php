@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reply;
+use Redirect;
 use Illuminate\Http\Request;
 
 class ReplyController extends Controller
@@ -35,7 +36,12 @@ class ReplyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reply = new Reply();
+        $reply->user_id = auth()->id();
+        $reply->review_id = $request->review_id;
+        $reply->body = $request->body;
+        $reply->save();
+        return $reply;
     }
 
     /**

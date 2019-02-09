@@ -8,12 +8,12 @@
 
 <script>
   export default {
-    props: ['data'],
+    props: ['reply'],
 
     data() {
       return {
-        favoritesCount: this.data.favoritesCount,
-        isFavorited: this.data.isFavorited
+        favoritesCount: this.reply.favoritesCount,
+        isFavorited: this.reply.isFavorited
       }
     },
 
@@ -26,13 +26,12 @@
     methods: {
       toggle() {
         if (this.isFavorited) {
-          console.log(axios.delete('/' + this.data.modelName + '/' + this.data.id +'/favorites'));
+          //axios.delete('/reply/' + this.reply.id +'/favorites')
           this.isFavorited = false;
           this.favoritesCount--;
         }
         else {
-          axios.post('/' + this.data.modelName + '/' + this.data.id +'/favorites');
-
+          axios.post('/reply/' + this.reply.id +'/favorites')
           this.isFavorited = true;
           this.favoritesCount++;
         }

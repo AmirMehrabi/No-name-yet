@@ -23,6 +23,9 @@ window.Vue = require('vue');
 
 window.axios = require('axios');
 
+window.Vue.use(require('vue-jalali-moment'));
+window.Vue.moment.locale('fa'); // 'en'
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -32,6 +35,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 let token = document.querySelector('meta[name="csrf-token"]');
+
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
