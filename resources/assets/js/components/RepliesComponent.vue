@@ -4,7 +4,7 @@
             <reply :data="reply"></reply>
         </div>
 
-        <button class="btn btn-block btn-primary" @click="paginateButton">نظرات بیشتر</button>
+        <paginator></paginator>
 
         <new-reply @created="add" ></new-reply>
     </div>
@@ -14,17 +14,23 @@
 <script>
     import Reply from './ReplyComponent.vue';
     import NewReply from './NewReplyComponent.vue';
+    import collection from '../mixins/collection';
     export default {
      props: [],
 
      components: { Reply, NewReply },
      
+     mixins: [collection],
+
      data() {
          return {
-                items: this.data,
-                moreMessages: [],
-                moreMsgFetched: false
+                dataSet: false,
+                endpoint: location.pathname + 'replies'
             }
+        },
+
+        created(){
+            this.fetch();
         },
 
         methods: {
@@ -33,12 +39,15 @@
                     .then(this.refresh);
             },
 
-            url(){
-                return location.pathname + '/replies';
+            refresh({data}){
+                console.log(data);
+                this.dataSet = data;
+                this.items = data.data;
             },
-            add(reply) {
-                this.items.push(reply);
-            }
+            url(){
+                return location.pathname + 'replies';
+            },
+
             }
         
     }

@@ -21,6 +21,7 @@ Vue.component('book-view', require('./pages/BookComponent.vue'));
 
 Vue.component('review-template', require('./pages/Review.vue'));
 
+Vue.component('pagination', require('./components/PaginationComponent.vue'));
 
 Vue.component('review', require('./components/ReviewComponent.vue'));
 
