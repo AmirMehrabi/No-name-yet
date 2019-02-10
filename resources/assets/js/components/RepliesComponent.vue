@@ -3,6 +3,9 @@
         <div v-for="(reply, id) in items" :key="reply.id">
             <reply :data="reply"></reply>
         </div>
+
+        <button class="btn btn-block btn-primary" @click="paginateButton">نظرات بیشتر</button>
+
         <new-reply @created="add" ></new-reply>
     </div>
 </template>
@@ -18,7 +21,9 @@
      
      data() {
          return {
-                items: this.data
+                items: this.data,
+                moreMessages: [],
+                moreMsgFetched: false
             }
         },
 
@@ -26,6 +31,7 @@
             add(reply) {
                 this.items.push(reply);
             }
-        }
+            }
+        
     }
 </script>

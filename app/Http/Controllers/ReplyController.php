@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reply;
 use Redirect;
+use App\Review;
 use Illuminate\Http\Request;
 
 class ReplyController extends Controller
@@ -42,6 +43,10 @@ class ReplyController extends Controller
         $reply->body = $request->body;
         $reply->save();
         return $reply;
+    }
+
+    public function ReviewReplies(Review $review) {
+        return Reply::where('review_id', $review->id)->latest()->paginate(1);
     }
 
     /**
