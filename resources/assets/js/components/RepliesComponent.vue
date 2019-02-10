@@ -4,7 +4,7 @@
             <reply :data="reply"></reply>
         </div>
 
-        <paginator></paginator>
+        <paginator :dataSet="dataSet" @updated="fetch"></paginator>
 
         <new-reply @created="add" ></new-reply>
     </div>
@@ -24,8 +24,7 @@
 
      data() {
          return {
-                dataSet: false,
-                endpoint: location.pathname + 'replies'
+                dataSet: false
             }
         },
 
@@ -34,18 +33,19 @@
         },
 
         methods: {
-            fetch(){
-                axios.get(this.url())
+            fetch(page){
+                axios.get(this.url(page))
                     .then(this.refresh);
             },
 
             refresh({data}){
-                console.log(data);
+                console.log(data.data);
                 this.dataSet = data;
-                this.items = data.data;
+                this.items = this.items.concat(data.data);
+                console.log(this.items);
             },
-            url(){
-                return location.pathname + 'replies';
+            url(page = 1){
+                return location.pathname + 'replies?page='+page;
             },
 
             }

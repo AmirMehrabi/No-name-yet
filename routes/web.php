@@ -27,6 +27,8 @@ Route::post('review/{review}/favorites', 'FavoritesController@store');
 Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 
 Route::get('review/{review}/replies', 'ReplyController@ReviewReplies');
+Route::post('review/{review}/replies', 'ReplyController@store');
+
 Route::resource('reply', 'ReplyController');
 Route::patch('/reply/{reply}', 'ReplyController@update');
 Route::post('/reply/{reply}/favorites', 'FavoritesController@storeReplyFavorite');

@@ -39,10 +39,10 @@ export default {
             this.review_id = objectParams;
         },
         addReply(){
-            axios.post(this.endpoint, {body: this.body, review_id: this.review_id})
+            axios.post(location.pathname + 'replies', {body: this.body, review_id: this.review_id})
             .then(({data}) => {
                 this.body = '';
-                flash('Your reply has been posted.');
+                flash('نظر شما پست شد');
                 this.$emit('created', data);
             })
             .catch(function (error) {

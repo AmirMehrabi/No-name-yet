@@ -18403,7 +18403,7 @@ Vue.component('book-view', __webpack_require__(182));
 
 Vue.component('review-template', __webpack_require__(194));
 
-Vue.component('pagination', __webpack_require__(218));
+Vue.component('paginator', __webpack_require__(218));
 
 Vue.component('review', __webpack_require__(143));
 
@@ -63601,11 +63601,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addReply: function addReply() {
             var _this = this;
 
-            axios.post(this.endpoint, { body: this.body, review_id: this.review_id }).then(function (_ref) {
+            axios.post(location.pathname + 'replies', { body: this.body, review_id: this.review_id }).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.body = '';
-                flash('Your reply has been posted.');
+                flash('نظر شما پست شد');
                 _this.$emit('created', data);
             }).catch(function (error) {
                 console.log(error);
@@ -63858,8 +63858,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            dataSet: false,
-            endpoint: location.pathname + 'replies'
+            dataSet: false
         };
     },
     created: function created() {
@@ -63868,18 +63867,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        fetch: function fetch() {
-            axios.get(this.url()).then(this.refresh);
+        fetch: function fetch(page) {
+            axios.get(this.url(page)).then(this.refresh);
         },
         refresh: function refresh(_ref) {
             var data = _ref.data;
 
-            console.log(data);
+            console.log(data.data);
             this.dataSet = data;
-            this.items = data.data;
+            this.items = this.items.concat(data.data);
+            console.log(this.items);
         },
         url: function url() {
-            return location.pathname + 'replies';
+            var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+            return location.pathname + 'replies?page=' + page;
         }
     }
 
@@ -63905,7 +63907,10 @@ var render = function() {
         )
       }),
       _vm._v(" "),
-      _c("paginator"),
+      _c("paginator", {
+        attrs: { dataSet: _vm.dataSet },
+        on: { updated: _vm.fetch }
+      }),
       _vm._v(" "),
       _c("new-reply", { on: { created: _vm.add } })
     ],
@@ -64074,7 +64079,7 @@ var render = function() {
                   _vm._v(
                     "\n                        " +
                       _vm._s(
-                        _vm._f("moment")(_vm.created_at, "dddd, Do jMMMM jYYYY")
+                        _vm._f("moment")(_vm.created_at, "dddd, Do jMMMM")
                       ) +
                       "\n                    "
                   )
@@ -64419,8 +64424,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['dataSet'],
+    data: function data() {
+        return {
+            page: 1,
+            prevUrl: false,
+            nextUrl: false
+        };
+    },
+
+
+    watch: {
+        dataSet: function dataSet() {
+            this.page = this.dataSet.current_page;
+            this.prevUrl = this.dataSet.prev_page_url;
+            this.nextUrl = this.dataSet.next_page_url;
+        },
+        page: function page() {
+            this.broadcast();
+        }
+    },
+
+    computed: {
+        shouldPaginate: function shouldPaginate() {
+            return !!this.prevUrl || !!this.nextUrl;
+        }
+    },
+
+    methods: {
+        broadcast: function broadcast() {
+            this.$emit('updated', this.page);
+        }
+    }
+});
 
 /***/ }),
 /* 220 */
@@ -64430,7 +64479,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c(
+      "button",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.nextUrl,
+            expression: "nextUrl"
+          }
+        ],
+        staticClass: "btn btn-block btn-primary",
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            _vm.page++
+          }
+        }
+      },
+      [_vm._v("بارگزاری نظرهای بیشتر")]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

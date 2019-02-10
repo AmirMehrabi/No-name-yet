@@ -11,7 +11,7 @@
                     <div class="text-daneh font-weight-bold ml-auto" ></div>
                     
                     <div class="flex-shrink-1 bd-highlight text-muted" >
-                        {{ created_at | moment("dddd, Do jMMMM jYYYY")  }}
+                        {{ created_at | moment("dddd, Do jMMMM")  }}
                     </div>
                 </div>
                 <p class="text-justify" v-text="data.body">

@@ -46,7 +46,7 @@ class ReplyController extends Controller
     }
 
     public function ReviewReplies(Review $review) {
-        return Reply::where('review_id', $review->id)->latest()->paginate(1);
+        return Reply::where('review_id', $review->id)->latest()->paginate(10);
     }
 
     /**
