@@ -15,7 +15,7 @@
     import Reply from './ReplyComponent.vue';
     import NewReply from './NewReplyComponent.vue';
     export default {
-     props: ['data'],
+     props: [],
 
      components: { Reply, NewReply },
      
@@ -28,6 +28,14 @@
         },
 
         methods: {
+            fetch(){
+                axios.get(this.url())
+                    .then(this.refresh);
+            },
+
+            url(){
+                return location.pathname + '/replies';
+            },
             add(reply) {
                 this.items.push(reply);
             }
