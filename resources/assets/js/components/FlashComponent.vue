@@ -1,54 +1,51 @@
 <template>
-  <div class="alert alert-success alert-flash" role="alert" v-show="show">
-     {{ body }}
-  </div>
+  <div class="alert alert-success alert-flash" role="alert" v-show="show">{{ body }}</div>
 </template>
 
 <script>
-  export default {
-    props: ['message'],
+export default {
+  props: ["message"],
 
-    data() {
-      return {
-        body: '',
-        show: false
-      }
-    },
+  data() {
+    return {
+      body: "",
+      show: false
+    };
+  },
 
-    created() {
-      if (this.message) {
-        this.flash(this.message);
-      }
-
-      window.events.$on('flash', message => {
-        this.flash(message);
-      });
-    },
-
-    methods: {
-      flash(message) {
-        this.body = message;
-        this.show = true;
-
-        this.hide();
-
-      },
-
-      hide() {
-        setTimeout(() => {
-          this.show = false;
-        }, 3000);
-      }
+  created() {
+    if (this.message) {
+      this.flash(this.message);
     }
-  };
+
+    window.events.$on("flash", message => {
+      this.flash(message);
+    });
+  },
+
+  methods: {
+    flash(message) {
+      this.body = message;
+      this.show = true;
+
+      this.hide();
+    },
+
+    hide() {
+      setTimeout(() => {
+        this.show = false;
+      }, 3000);
+    }
+  }
+};
 </script>
 
 <style>
-  .alert-flash {
-    position: fixed !IMPORTANT;
-    right: 25px;
-    bottom: 25px;
-    z-index: 100;
-  }
+.alert-flash {
+  position: fixed !IMPORTANT;
+  right: 25px;
+  bottom: 25px;
+  z-index: 100;
+}
 </style>
  

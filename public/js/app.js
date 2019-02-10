@@ -63183,15 +63183,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['message'],
+  props: ["message"],
 
   data: function data() {
     return {
-      body: '',
+      body: "",
       show: false
     };
   },
@@ -63202,7 +63200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.flash(this.message);
     }
 
-    window.events.$on('flash', function (message) {
+    window.events.$on("flash", function (message) {
       _this.flash(message);
     });
   },
@@ -63242,7 +63240,7 @@ var render = function() {
       staticClass: "alert alert-success alert-flash",
       attrs: { role: "alert" }
     },
-    [_vm._v("\n   " + _vm._s(_vm.body) + "\n")]
+    [_vm._v(_vm._s(_vm.body))]
   )
 }
 var staticRenderFns = []
@@ -63375,21 +63373,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data'],
+  props: ["data"],
 
-    components: { Review: __WEBPACK_IMPORTED_MODULE_0__ReviewComponent_vue___default.a },
+  components: { Review: __WEBPACK_IMPORTED_MODULE_0__ReviewComponent_vue___default.a },
 
-    data: function data() {
-        return {
-            items: this.data
-        };
-    }
+  data: function data() {
+    return {
+      items: this.data
+    };
+  }
 });
 
 /***/ }),
@@ -63407,29 +63403,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['attributes'],
+  props: ["attributes"],
 
-    components: { Favorite: __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default.a, NewReply: __WEBPACK_IMPORTED_MODULE_1__NewReplyComponent_vue___default.a },
+  components: { Favorite: __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default.a, NewReply: __WEBPACK_IMPORTED_MODULE_1__NewReplyComponent_vue___default.a },
 
-    data: function data() {
-        return {
-            editing: false,
-            body: this.attributes.body
-        };
-    },
+  data: function data() {
+    return {
+      editing: false,
+      body: this.attributes.body
+    };
+  },
 
 
-    methods: {
-        update: function update() {
-            axios.patch('/review/' + this.attributes.id, {
-                body: this.body
-            });
+  methods: {
+    update: function update() {
+      axios.patch("/review/" + this.attributes.id, {
+        body: this.body
+      });
 
-            this.editing = false;
+      this.editing = false;
 
-            flash('نقد شما به روز رسانی شد');
-        }
+      flash("نقد شما به روز رسانی شد");
     }
+  }
 });
 
 /***/ }),
@@ -63467,7 +63463,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -63486,9 +63482,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['data'],
+  props: ["data"],
 
   data: function data() {
     return {
@@ -63500,18 +63498,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   computed: {
     classes: function classes() {
-      return ['btn btn-sm', this.isFavorited ? 'btn-danger' : 'btn-light text-muted'];
+      return ["btn btn-sm", this.isFavorited ? "btn-danger" : "btn-light text-muted"];
     }
   },
 
   methods: {
     toggle: function toggle() {
       if (this.isFavorited) {
-        console.log(axios.delete('/' + this.data.modelName + '/' + this.data.id + '/favorites'));
+        console.log(axios.delete("/" + this.data.modelName + "/" + this.data.id + "/favorites"));
         this.isFavorited = false;
         this.favoritesCount--;
       } else {
-        axios.post('/' + this.data.modelName + '/' + this.data.id + '/favorites');
+        axios.post("/" + this.data.modelName + "/" + this.data.id + "/favorites");
 
         this.isFavorited = true;
         this.favoritesCount++;
@@ -63574,44 +63572,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            body: '',
-            review_id: this.review_id,
-            endpoint: '/reply/'
-        };
-    },
-    mounted: function mounted() {
-        this.$root.$on('review_id', this.getReviewId);
-    },
+  data: function data() {
+    return {
+      body: "",
+      review_id: this.review_id,
+      endpoint: "/reply/"
+    };
+  },
+  mounted: function mounted() {
+    this.$root.$on("review_id", this.getReviewId);
+  },
 
-    computed: {
-        signedIn: function signedIn() {
-            return window.Laravel.signedIn;
-        }
-    },
-
-    methods: {
-        getReviewId: function getReviewId(objectParams) {
-            this.review_id = objectParams;
-        },
-        addReply: function addReply() {
-            var _this = this;
-
-            axios.post(location.pathname + 'replies', { body: this.body, review_id: this.review_id }).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.body = '';
-                flash('نظر شما پست شد');
-                _this.$emit('created', data);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
+  computed: {
+    signedIn: function signedIn() {
+      return window.Laravel.signedIn;
     }
+  },
+
+  methods: {
+    getReviewId: function getReviewId(objectParams) {
+      this.review_id = objectParams;
+    },
+    addReply: function addReply() {
+      var _this = this;
+
+      axios.post(location.pathname + "replies", {
+        body: this.body,
+        review_id: this.review_id
+      }).then(function (_ref) {
+        var data = _ref.data;
+
+        _this.body = "";
+        flash("نظر شما پست شد");
+        _this.$emit("created", data);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -63850,41 +63850,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: [],
+  props: [],
 
-    components: { Reply: __WEBPACK_IMPORTED_MODULE_0__ReplyComponent_vue___default.a, NewReply: __WEBPACK_IMPORTED_MODULE_1__NewReplyComponent_vue___default.a },
+  components: { Reply: __WEBPACK_IMPORTED_MODULE_0__ReplyComponent_vue___default.a, NewReply: __WEBPACK_IMPORTED_MODULE_1__NewReplyComponent_vue___default.a },
 
-    mixins: [__WEBPACK_IMPORTED_MODULE_2__mixins_collection__["a" /* default */]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_2__mixins_collection__["a" /* default */]],
 
-    data: function data() {
-        return {
-            dataSet: false
-        };
+  data: function data() {
+    return {
+      dataSet: false
+    };
+  },
+  created: function created() {
+    this.fetch();
+  },
+
+
+  methods: {
+    fetch: function fetch(page) {
+      axios.get(this.url(page)).then(this.refresh);
     },
-    created: function created() {
-        this.fetch();
+    refresh: function refresh(_ref) {
+      var data = _ref.data;
+
+      console.log(data.data);
+      this.dataSet = data;
+      this.items = this.items.concat(data.data);
+      console.log(this.items);
     },
+    url: function url() {
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
-
-    methods: {
-        fetch: function fetch(page) {
-            axios.get(this.url(page)).then(this.refresh);
-        },
-        refresh: function refresh(_ref) {
-            var data = _ref.data;
-
-            console.log(data.data);
-            this.dataSet = data;
-            this.items = this.items.concat(data.data);
-            console.log(this.items);
-        },
-        url: function url() {
-            var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-
-            return location.pathname + 'replies?page=' + page;
-        }
+      return location.pathname + "replies?page=" + page;
     }
-
+  }
 });
 
 /***/ }),
@@ -63909,7 +63908,7 @@ var render = function() {
       _vm._v(" "),
       _c("paginator", {
         attrs: { dataSet: _vm.dataSet },
-        on: { updated: _vm.fetch }
+        on: { changed: _vm.fetch }
       }),
       _vm._v(" "),
       _c("new-reply", { on: { created: _vm.add } })
@@ -64015,41 +64014,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data'],
+  props: ["data"],
 
-    components: { Favorite: __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default.a },
+  components: { Favorite: __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default.a },
 
-    data: function data() {
-        return {
-            editing: false,
-            body: this.data.body,
-            review_id: this.data.review_id,
-            created_at: this.data.created_at
-        };
-    },
+  data: function data() {
+    return {
+      editing: false,
+      body: this.data.body,
+      review_id: this.data.review_id,
+      created_at: this.data.created_at
+    };
+  },
 
 
-    computed: {
-        signedIn: function signedIn() {
-            return window.Laravel.signedIn;
-        }
-    },
-
-    methods: {
-        update: function update() {
-            axios.patch('/reply/' + this.data.id, {
-                body: this.body
-            });
-
-            this.editing = false;
-
-            flash('نقد شما به روز رسانی شد');
-        }
+  computed: {
+    signedIn: function signedIn() {
+      return window.Laravel.signedIn;
     }
+  },
+
+  methods: {
+    update: function update() {
+      axios.patch("/reply/" + this.data.id, {
+        body: this.body
+      });
+
+      this.editing = false;
+
+      flash("نقد شما به روز رسانی شد");
+    }
+  }
 });
 
 /***/ }),
@@ -64077,11 +64079,7 @@ var render = function() {
                 { staticClass: "flex-shrink-1 bd-highlight text-muted" },
                 [
                   _vm._v(
-                    "\n                        " +
-                      _vm._s(
-                        _vm._f("moment")(_vm.created_at, "dddd, Do jMMMM")
-                      ) +
-                      "\n                    "
+                    _vm._s(_vm._f("moment")(_vm.created_at, "dddd, Do jMMMM"))
                   )
                 ]
               )
@@ -64135,7 +64133,7 @@ var staticRenderFns = [
     return _c(
       "a",
       { staticClass: "btn link-unstyled text-muted", attrs: { href: "" } },
-      [_vm._v("۱۲ "), _c("i", { staticClass: "fa fa-reply" })]
+      [_vm._v("۱۲\n            "), _c("i", { staticClass: "fa fa-reply" })]
     )
   },
   function() {
@@ -64145,7 +64143,7 @@ var staticRenderFns = [
     return _c(
       "a",
       { staticClass: "btn link-unstyled text-muted", attrs: { href: "" } },
-      [_vm._v("۱۲ "), _c("i", { staticClass: "far fa-heart" })]
+      [_vm._v("۱۲\n            "), _c("i", { staticClass: "far fa-heart" })]
     )
   }
 ]
@@ -64244,7 +64242,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -64263,9 +64261,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['reply'],
+  props: ["reply"],
 
   data: function data() {
     return {
@@ -64277,7 +64277,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   computed: {
     classes: function classes() {
-      return ['btn btn-sm', this.isFavorited ? 'btn-danger' : 'btn-light text-muted'];
+      return ["btn btn-sm", this.isFavorited ? "btn-danger" : "btn-light text-muted"];
     }
   },
 
@@ -64288,7 +64288,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.isFavorited = false;
         this.favoritesCount--;
       } else {
-        axios.post('/reply/' + this.reply.id + '/favorites');
+        axios.post("/reply/" + this.reply.id + "/favorites");
         this.isFavorited = true;
         this.favoritesCount++;
       }
@@ -64435,40 +64435,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['dataSet'],
-    data: function data() {
-        return {
-            page: 1,
-            prevUrl: false,
-            nextUrl: false
-        };
+  props: ["dataSet"],
+  data: function data() {
+    return {
+      page: 1,
+      prevUrl: false,
+      nextUrl: false
+    };
+  },
+
+
+  watch: {
+    dataSet: function dataSet() {
+      this.page = this.dataSet.current_page;
+      this.prevUrl = this.dataSet.prev_page_url;
+      this.nextUrl = this.dataSet.next_page_url;
     },
-
-
-    watch: {
-        dataSet: function dataSet() {
-            this.page = this.dataSet.current_page;
-            this.prevUrl = this.dataSet.prev_page_url;
-            this.nextUrl = this.dataSet.next_page_url;
-        },
-        page: function page() {
-            this.broadcast();
-        }
-    },
-
-    computed: {
-        shouldPaginate: function shouldPaginate() {
-            return !!this.prevUrl || !!this.nextUrl;
-        }
-    },
-
-    methods: {
-        broadcast: function broadcast() {
-            this.$emit('updated', this.page);
-        }
+    page: function page() {
+      this.broadcast();
     }
+  },
+
+  computed: {
+    shouldPaginate: function shouldPaginate() {
+      return !!this.prevUrl || !!this.nextUrl;
+    }
+  },
+
+  methods: {
+    broadcast: function broadcast() {
+      return this.$emit("changed", this.page);
+    }
+  }
 });
 
 /***/ }),

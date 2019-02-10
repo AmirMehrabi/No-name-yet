@@ -1,21 +1,19 @@
 <template>
-    <div>
-
-    </div>
+  <div></div>
 </template>
 
 <script>
-import Review from './ReviewComponent.vue';
- 
+import Review from "./ReviewComponent.vue";
+
 export default {
-    props: ['data'],
+  props: ["data"],
 
-    components: { Review },
+  components: { Review },
 
-    data() {
-        return {
-            items: this.data
-        }
-    }
-}
+  data() {
+    return {
+      items: this.data
+    };
+  }
+};
 </script>
