@@ -8,7 +8,7 @@ class Review extends Model
 {
     protected $guarded = [];
 
-    protected $appends = ['favoritesCount', 'isFavorited', 'modelName'];
+    protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo'];
 
 
     public function owner()
@@ -73,6 +73,10 @@ class Review extends Model
 
     public function subscriptions(){
       return $this->hasMany(ReviewSubscription::class);
+    }
+
+    public function getIsSubscribedToAttribute(){
+      return $this->subscriptions()->where('user_id', auth()->id())->exists();
     }
 
 

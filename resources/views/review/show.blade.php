@@ -30,7 +30,7 @@
 										اضافه کردن به لیست
 									</button>
 									@if (Auth::user())
-									<subscribe-button></subscribe-button>
+									<subscribe-button :active="{{json_encode($review->isSubscribedTo)}}"></subscribe-button>
 
 									<button class="btn btn-light border-0 btn-block mt-1  trigger">
 										نقد این کتاب

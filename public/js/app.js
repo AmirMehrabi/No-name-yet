@@ -64575,14 +64575,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "btn btn-block btn-info mt-1",
-      on: { click: _vm.subscribe }
-    },
-    [_vm._v("اشتراک در نقد")]
-  )
+  return _c("button", {
+    class: _vm.classes,
+    domProps: { textContent: _vm._s(_vm.subscriptionState) },
+    on: { click: _vm.subscribe }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -64606,16 +64603,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["active"],
+  data: function data() {
+    return {
+      mutableActive: JSON.parse(this.active),
+      subscriptionState: ''
+    };
+  },
+  created: function created() {
+    this.subscriptionState = this.mutableActive ? 'حذف اشتراک' : 'اشتراک در نقد';
+    console.log(this.mutableActive);
+  },
+
+
+  computed: {
+    classes: function classes() {
+      return ["btn btn-block mt-1", this.mutableActive ? "btn-primary" : "btn-secondary"];
+    }
+  },
   methods: {
     subscribe: function subscribe() {
-      axios.post(location.pathname + "subscriptions").then(function (_ref) {
-        var data = _ref.data;
-
-        console.log(data);
-        flash("شما مشترک این نقد شدید");
-      }).catch(function (error) {
-        console.log(error);
-      });
+      axios[this.mutableActive ? 'delete' : 'post'](location.pathname + "subscriptions");
+      this.mutableActive = !this.mutableActive;
+      this.subscriptionState = this.mutableActive ? 'حذف اشتراک' : 'اشتراک در نقد';
     }
   }
 });

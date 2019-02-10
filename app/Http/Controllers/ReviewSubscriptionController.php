@@ -80,8 +80,8 @@ class ReviewSubscriptionController extends Controller
      * @param  \App\ReviewSubscription  $reviewSubscription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReviewSubscription $reviewSubscription)
+    public function destroy(Review $review)
     {
-        //
+        $review->unsubscribe();
     }
 }

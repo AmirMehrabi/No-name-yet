@@ -19,6 +19,8 @@ class CreateReviewSubscriptionsTable extends Migration
             $table->unsignedInteger('review_id');
             $table->timestamps();
 
+            $table->unique(['user_id', 'review_id']);
+
             $table->foreign('review_id')
                 ->references('id')
                 ->on('reviews')

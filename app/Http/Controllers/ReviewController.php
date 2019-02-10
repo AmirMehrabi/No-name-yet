@@ -54,6 +54,7 @@ class ReviewController extends Controller
     public function show(Review $review)
     {   
         $review = Review::where('id', $review->id)->with('owner')->first();
+        //return $review->append('isSubscribedTo');
         return view('review.show', compact('review'));
     }
 
