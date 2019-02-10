@@ -27,6 +27,11 @@ export default {
       ](location.pathname + "subscriptions");
         this.mutableActive = ! this.mutableActive;
         this.subscriptionState = (this.mutableActive ?  'حذف اشتراک' : 'اشتراک در نقد');
+        if(this.mutableActive == true) {
+            flash('شما در این نقد مشترک شدید');
+        }else {
+            flash('شما از این نقد سلب اشتراک کردید');
+        }
     }
   }
 };
