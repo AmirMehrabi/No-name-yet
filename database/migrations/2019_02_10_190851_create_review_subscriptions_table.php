@@ -15,7 +15,14 @@ class CreateReviewSubscriptionsTable extends Migration
     {
         Schema::create('review_subscriptions', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('review_id');
             $table->timestamps();
+
+            $table->foreign('review_id')
+                ->references('id')
+                ->on('reviews')
+                ->onDelete('cascade');
         });
     }
 
