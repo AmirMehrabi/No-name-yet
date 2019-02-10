@@ -61,6 +61,14 @@ class Review extends Model
       return $this->favorites->count();
     }
 
+    public function subscribe(){
+
+    }
+
+    public function subscriptions(){
+      return $this->hasMany(ReviewSubscription::class);
+    }
+
 
 
 }
