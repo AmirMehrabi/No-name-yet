@@ -25,14 +25,19 @@
 								 alt="">
 								@endif
 								<div class="dropdown">
-									<button class="btn btn-success rtl btn-lg btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton"
+									<button class="btn btn-success rtl  btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton"
 									 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										اضافه کردن به لیست
 									</button>
 									@if (Auth::user())
-									<button class="btn btn-light btn-lg border-0 btn-block mt-1  trigger">
+									<subscribe-button></subscribe-button>
+
+									<button class="btn btn-light border-0 btn-block mt-1  trigger">
 										نقد این کتاب
 									</button>
+
+									
+
 									@endif
 
 

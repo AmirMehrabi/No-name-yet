@@ -23,6 +23,7 @@ Route::resource('book', 'BookController');
 
 Route::resource('review', 'ReviewController');
 Route::patch('/review/{review}', 'ReviewController@update');
+Route::post('review/{review}/subscriptions', 'ReviewSubscriptionController@store')->middleware('auth');
 Route::post('review/{review}/favorites', 'FavoritesController@store');
 Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 
