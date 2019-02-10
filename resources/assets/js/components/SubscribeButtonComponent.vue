@@ -13,7 +13,6 @@ export default {
     },
   created() {
         this.subscriptionState = (this.mutableActive ?  'حذف اشتراک' : 'اشتراک در نقد');
-        console.log(this.mutableActive);
   },
 
   computed: {

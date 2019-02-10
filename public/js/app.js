@@ -63876,10 +63876,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     refresh: function refresh(_ref) {
       var data = _ref.data;
 
-      console.log(data.data);
       this.dataSet = data;
       this.items = this.items.concat(data.data);
-      console.log(this.items);
     },
     url: function url() {
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
@@ -64612,7 +64610,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   created: function created() {
     this.subscriptionState = this.mutableActive ? 'حذف اشتراک' : 'اشتراک در نقد';
-    console.log(this.mutableActive);
   },
 
 

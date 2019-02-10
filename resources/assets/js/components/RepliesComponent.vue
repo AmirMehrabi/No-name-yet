@@ -38,10 +38,8 @@ export default {
     },
 
     refresh({ data }) {
-      console.log(data.data);
       this.dataSet = data;
       this.items = this.items.concat(data.data);
-      console.log(this.items);
     },
     url(page = 1) {
       return location.pathname + "replies?page=" + page;
