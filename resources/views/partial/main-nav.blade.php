@@ -13,9 +13,10 @@
             <a class="nav-link" href="#"><i class="far fa-user"></i></a>
           </li>
 
-          <li class="nav-item nav-item-icon active pt-1 mx-2">
+          {{-- <li class="nav-item nav-item-icon active pt-1 mx-2">
             <a class="nav-link" href="#"><i class="far fa-bell"></i><span class="badge badge-secondary text-white bg-daneh border-0">۲۳</span></a>
-          </li>
+          </li> --}}
+          <user-notifications></user-notifications>
 
         </ul>
 

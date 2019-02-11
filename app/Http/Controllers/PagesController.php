@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Goutte\Client;
 use App\Book;
+use App\Review;
+use App\Notifications\ReviewWasUpdated;
 use Response;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -129,5 +131,16 @@ class PagesController extends Controller
 
         $endtime = microtime(true); // Bottom of page
         printf("Page loaded in %f seconds", $endtime - $starttime);
+    }
+
+
+    public function subscription(){
+        $review = Review::first();
+
+        foreach($review->subscriptions as $subscription) {
+            $subscription->user->notify(new ReviewWasUpdated($review, $reply));
+        }
+
+        return $review;
     }
 }

@@ -65,6 +65,8 @@ class Review extends Model
       $this->subscriptions()->create([
         'user_id' => auth()->id()
       ]);
+
+      return $this;
     }
 
     public function unsubscribe(){
@@ -78,6 +80,7 @@ class Review extends Model
     public function getIsSubscribedToAttribute(){
       return $this->subscriptions()->where('user_id', auth()->id())->exists();
     }
+    
 
 
 

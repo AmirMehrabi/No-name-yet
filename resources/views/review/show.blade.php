@@ -2,13 +2,14 @@
 
 
 
-@include('partial.main-nav')
+
 
 @section('header-assets')
 
 @endsection
 
 @section('content')
+@include('partial.main-nav')
 <review-template :review_id="{{$review->id}}" inline-template>
 	<div>
 		<div class="container">

@@ -23,9 +23,14 @@ Route::resource('book', 'BookController');
 
 Route::resource('review', 'ReviewController');
 Route::patch('/review/{review}', 'ReviewController@update');
+
 // Subscribe user to an specific review
 Route::post('review/{review}/subscriptions', 'ReviewSubscriptionController@store')->middleware('auth');
 Route::delete('review/{review}/subscriptions', 'ReviewSubscriptionController@destroy')->middleware('auth');
+
+// User Notifications
+Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
+Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
 
 Route::post('review/{review}/favorites', 'FavoritesController@store');
 Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
@@ -49,3 +54,6 @@ Route::get('/auth/google/callback', 'Auth\LoginController@handleProviderCallback
 
 
 Route::get('/crawler', 'PagesController@crawler');
+
+Route::get('/subscription', 'PagesController@subscription');
+

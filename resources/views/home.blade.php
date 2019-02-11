@@ -14,9 +14,10 @@
   }
 </style>
 
-@include('partial.navbar')
+
 
 @section('content')
+@include('partial.navbar')
   <div class="container">
     <div class="row justify-content-center align-items-center h-75">
       <div class="col-md-6">

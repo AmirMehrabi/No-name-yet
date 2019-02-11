@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Reply;
-use Redirect;
-use App\Review;
-use App\Notifications\ReviewWasUpdated;
+use App\User;
 use Illuminate\Http\Request;
 
-class ReplyController extends Controller
+class UserNotificationsController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +18,7 @@ class ReplyController extends Controller
      */
     public function index()
     {
-        //
+        return auth()->user()->unreadNotifications;
     }
 
     /**
@@ -38,35 +39,16 @@ class ReplyController extends Controller
      */
     public function store(Request $request)
     {
-        $reply = new Reply();
-        $reply->user_id = auth()->id();
-        $reply->review_id = $request->review_id;
-        $reply->body = $request->body;
-        $reply->save();
-        $review = Review::where('id', $request->review_id)->first();
-
-        foreach($review->subscriptions as $subscription) {
-            if($subscription->user_id != $reply->user_id ) {
-                $subscription->user->notify(new ReviewWasUpdated($review, $reply));
-
-            }
-        }
-
-        return $reply;
-    }
-
-    public function ReviewReplies(Review $review) {
-
-        return Reply::where('review_id', $review->id)->with('favorites')->latest()->paginate(10);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Reply  $reply
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show($id)
     {
         //
     }
@@ -74,10 +56,10 @@ class ReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Reply  $reply
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reply $reply)
+    public function edit($id)
     {
         //
     }
@@ -86,10 +68,10 @@ class ReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Reply  $reply
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -97,11 +79,11 @@ class ReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Reply  $reply
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(User $user, $notificationId)
     {
-        //
+        auth()->user()->notifications()->findOrFail($notificationId)->markAsRead();
     }
 }
