@@ -63395,7 +63395,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   created: function created() {
     this.fetch();
-    console.log(this.bookid);
   },
 
 
@@ -63496,7 +63495,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -63516,9 +63514,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       repliesCount: this.data.length,
       dataSet: this.data
     };
-  },
-  created: function created() {
-    console.log(this.data.replies);
   },
 
   methods: {
@@ -63569,7 +63564,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -63611,7 +63606,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     toggle: function toggle() {
       if (this.isFavorited) {
-        console.log(axios.delete("/" + this.data.modelName + "/" + this.data.id + "/favorites"));
+        axios.delete("/" + this.data.modelName + "/" + this.data.id + "/favorites");
         this.isFavorited = false;
         this.favoritesCount--;
       } else {
@@ -63687,9 +63682,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       review_id: this.review_id,
       endpoint: "/reply/"
     };
-  },
-  created: function created() {
-    console.log('Instance ID is: ' + this.review_id);
   },
   mounted: function mounted() {
     this.$root.$on("review_id", this.getReviewId);
@@ -63969,7 +63961,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -63996,7 +63987,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     fetch: function fetch(page) {
       axios.get(this.url(page)).then(this.refresh);
-      console.log(this.propid);
     },
     refresh: function refresh(_ref) {
       var data = _ref.data;
@@ -64023,8 +64013,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FavoriteComponent_vue__);
-//
-//
 //
 //
 //
@@ -64104,7 +64092,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "comment-section border-bottom mt-2" }, [
-      _c("div", { staticClass: "d-flex flex-row-reverse w-100 text-right" }, [
+      _c("div", { staticClass: "d-flex w-100 text-right" }, [
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "p-2 flex-fill bd-highlight mt-2" }, [
@@ -64137,9 +64125,7 @@ var render = function() {
             [
               _vm.signedIn
                 ? _c("favorite", { attrs: { data: _vm.data } })
-                : _vm._e(),
-              _vm._v(" "),
-              _vm._m(1)
+                : _vm._e()
             ],
             1
           )
@@ -64163,16 +64149,6 @@ var staticRenderFns = [
         }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn link-unstyled text-muted", attrs: { href: "" } },
-      [_vm._v("۱۲\n            "), _c("i", { staticClass: "fa fa-reply" })]
-    )
   }
 ]
 render._withStripped = true
@@ -65079,7 +65055,6 @@ var render = function() {
             "div",
             { staticClass: "card card-body text-right rtl text-dark" },
             [
-              _vm._v("\n          " + _vm._s(_vm.data.id) + "\n          "),
               _c("replies", {
                 attrs: { data: _vm.data.replies, propid: _vm.data.id }
               })

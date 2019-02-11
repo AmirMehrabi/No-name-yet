@@ -2,7 +2,6 @@
   <div>
     <div v-for="reply in items" :key="reply.id">
       <reply :data="reply"></reply>
-      
     </div>
 
     <paginator :dataSet="dataSet" @changed="fetch"></paginator>
@@ -39,7 +38,6 @@ export default {
   methods: {
     fetch(page) {
       axios.get(this.url(page)).then(this.refresh);
-      console.log(this.propid);
     },
 
     refresh({ data }) {

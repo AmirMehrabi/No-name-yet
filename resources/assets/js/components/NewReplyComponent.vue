@@ -26,9 +26,6 @@ export default {
     };
   },
 
-  created(){
-    console.log('Instance ID is: ' +this.review_id);
-  },
   mounted() {
     this.$root.$on("review_id", this.getReviewId);
   },

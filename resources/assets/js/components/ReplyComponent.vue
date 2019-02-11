@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="comment-section border-bottom mt-2">
-      <div class="d-flex flex-row-reverse w-100 text-right">
+      <div class="d-flex w-100 text-right">
         <div class="p-2 bd-highlight align-self-center">
           <img
             src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
@@ -21,9 +21,7 @@
           <div class="review-feedback text-left">
             <favorite :data="data" v-if="signedIn"></favorite>
 
-            <a href class="btn link-unstyled text-muted">۱۲
-              <i class="fa fa-reply"></i>
-            </a>
+
 
           </div>
         </div>

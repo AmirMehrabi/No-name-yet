@@ -31,11 +31,9 @@ export default {
   methods: {
     toggle() {
       if (this.isFavorited) {
-        console.log(
-          axios.delete(
+        axios.delete(
             "/" + this.data.modelName + "/" + this.data.id + "/favorites"
-          )
-        );
+          );
         this.isFavorited = false;
         this.favoritesCount--;
       } else {

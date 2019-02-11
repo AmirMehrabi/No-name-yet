@@ -58,7 +58,6 @@
 
               <div class="collapse" :id="'collapseComments-'+data.id">
                 <div class="card card-body text-right rtl text-dark">
-                  {{data.id}}
                   <replies :data="data.replies" :propid="data.id"></replies>
                   <!-- <replies :data="dataSet.replies"></replies> -->
                 </div>
@@ -86,10 +85,6 @@ export default {
       repliesCount: this.data.length,
       dataSet: this.data
     };
-  },
-
-  created() {
-    console.log(this.data.replies);
   },
   methods: {
     update() {

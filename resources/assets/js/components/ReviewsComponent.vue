@@ -32,7 +32,6 @@ export default {
   },
     created() {
     this.fetch();
-    console.log(this.bookid);
   },
 
   methods: {
