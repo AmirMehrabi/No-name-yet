@@ -6,6 +6,7 @@ use App\Review;
 use Illuminate\Http\Request;
 use Auth;
 use Redirect;
+use App\Book;
 
 class ReviewController extends Controller
 {
@@ -90,5 +91,13 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
         //
+    }
+
+
+    // Added methods
+
+    public function BookReviews(Book $book) {
+
+        return Review::where('book_id', $book->id)->with(['favorites', 'replies'])->latest()->paginate(10);
     }
 }

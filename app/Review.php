@@ -8,7 +8,7 @@ class Review extends Model
 {
     protected $guarded = [];
 
-    protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo'];
+    protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo', 'ownerName', 'replies'];
 
 
     public function owner()
@@ -60,6 +60,15 @@ class Review extends Model
     public function getFavoritesCountAttribute(){
       return $this->favorites->count();
     }
+
+
+    public function getOwnerNameAttribute() {
+      return $this->owner->name;
+  }
+
+  public function getRepliesAttribute() {
+    return $this->replies();
+}
 
     public function subscribe(){
       $this->subscriptions()->create([

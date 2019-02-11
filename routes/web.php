@@ -35,6 +35,12 @@ Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotification
 Route::post('review/{review}/favorites', 'FavoritesController@store');
 Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 
+// Pagination of reviews in book page
+Route::get('book/{book}/reviews', 'ReviewController@BookReviews');
+Route::post('book/{book}/reviews', 'ReviewController@store');
+
+
+// Pagination of replies in review page
 Route::get('review/{review}/replies', 'ReplyController@ReviewReplies');
 Route::post('review/{review}/replies', 'ReplyController@store');
 

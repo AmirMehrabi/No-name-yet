@@ -10,7 +10,7 @@
 
 @section('content')
 @include('partial.main-nav')
-<review-template :review_id="{{$review->id}}" inline-template>
+<review-template inline-template>
 	<div>
 		<div class="container">
 			<div class="row justify-content-center mt-5">
@@ -109,7 +109,7 @@
 										</div>
 									</div>
 
-									<replies :data="{{ $review->replies }}"></replies>
+								<replies :propid="{{$review->id}}"></replies>
 
 									{{-- @foreach ($review->replies as $reply)
 									@include('partial.comment')

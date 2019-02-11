@@ -8,7 +8,7 @@ class Reply extends Model
 {
     protected $guarded = [];
 
-    protected $appends = ['favoritesCount', 'isFavorited', 'modelName'];
+    protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'ownerName'];
 
 
     public function owner()
@@ -18,7 +18,7 @@ class Reply extends Model
 
     public function review()
     {
-        return $this->belongsTo(Review::class, 'book_id');
+        return $this->belongsTo(Review::class, 'review_id');
     }
 
     public function getModelNameAttribute()
@@ -49,6 +49,12 @@ class Reply extends Model
     public function getIsFavoritedAttribute() {
         return $this->isFavorited();
     }
+
+    public function getOwnerNameAttribute() {
+        return $this->owner->name;
+    }
+
+
 
     public function getFavoritesCountAttribute(){
         return $this->favorites->count();

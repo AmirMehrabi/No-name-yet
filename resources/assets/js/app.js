@@ -17,7 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('flash-component', require('./components/FlashComponent.vue'));
 
-Vue.component('book-view', require('./pages/BookComponent.vue'));
+Vue.component('book-template', require('./pages/Book.vue'));
 
 Vue.component('review-template', require('./pages/Review.vue'));
 
@@ -26,6 +26,9 @@ Vue.component('paginator', require('./components/PaginationComponent.vue'));
 Vue.component('user-notifications', require('./components/UserNotificationsComponent.vue'));
 
 Vue.component('review', require('./components/ReviewComponent.vue'));
+
+Vue.component('reviews', require('./components/ReviewsComponent.vue'));
+
 
 Vue.component('reply', require('./components/ReplyComponent.vue'));
 

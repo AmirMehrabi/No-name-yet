@@ -57,7 +57,7 @@ class ReplyController extends Controller
 
     public function ReviewReplies(Review $review) {
 
-        return Reply::where('review_id', $review->id)->with('favorites')->latest()->paginate(10);
+        return Reply::where('review_id', $review->id)->with(['favorites', 'review'])->latest()->paginate(10);
     }
 
     /**

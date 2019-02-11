@@ -24,9 +24,7 @@
             <a href class="btn link-unstyled text-muted">۱۲
               <i class="fa fa-reply"></i>
             </a>
-            <a href class="btn link-unstyled text-muted">۱۲
-              <i class="far fa-heart"></i>
-            </a>
+
           </div>
         </div>
       </div>

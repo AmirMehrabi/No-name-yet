@@ -17,12 +17,17 @@
 
 <script>
 export default {
+  props: ['instanceid'],
   data() {
     return {
       body: "",
       review_id: this.review_id,
       endpoint: "/reply/"
     };
+  },
+
+  created(){
+    console.log('Instance ID is: ' +this.review_id);
   },
   mounted() {
     this.$root.$on("review_id", this.getReviewId);
@@ -39,9 +44,9 @@ export default {
     },
     addReply() {
       axios
-        .post(location.pathname + "replies", {
+        .post('/review/' + this.instanceid + "/replies", {
           body: this.body,
-          review_id: this.review_id
+          review_id: this.instanceid
         })
         .then(({ data }) => {
           this.body = "";
