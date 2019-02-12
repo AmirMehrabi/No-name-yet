@@ -17,6 +17,10 @@ class PagesController extends Controller
         return view('book.add');
     }
 
+    public function profile() {
+        return view('profile.index');
+    }
+
     public function crawler()
     { 
         $starttime = microtime(true);

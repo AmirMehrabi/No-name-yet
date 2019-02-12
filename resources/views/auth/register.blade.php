@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col col-md-12 text-center">
-          <div class="card raibow-botton-border m-5">
+          <div class="card-shadow raibow-botton-border m-5">
             <div class="row">
               <div class="col-md-6 p-2">
                 <div class="login-background h-100 ml-3 rtl p-5">
@@ -24,7 +24,7 @@
 
               </div>
               <div class="col-md-6 ">
-                <div class="card-content">
+                <div class="card-shadow-content">
                   <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                       {{ csrf_field() }}
                   <h1 class="h4 py-3 text-center">ثبت نام</h1>

@@ -31,63 +31,63 @@ background-size: cover;
 }
 
 
-.card {
+.card-shadow {
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.36), 0 7px 20px 0 rgba(0, 0, 0, 0.25);
 }
 
-.card {
+.card-shadow {
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 2px;
   background-clip: padding-box;
 }
-.card span.card-title {
+.card-shadow span.card-shadow-title {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-.card .card-image {
+.card-shadow .card-shadow-image {
   position: relative;
   overflow: hidden;
 }
-.card .card-image img {
+.card-shadow .card-shadow-image img {
   border-radius: 2px 2px 0 0;
   background-clip: padding-box;
   position: relative;
   z-index: -1;
 }
-.card .card-image span.card-title {
+.card-shadow .card-shadow-image span.card-shadow-title {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 16px;
 }
-.card .card-content {
+.card-shadow .card-shadow-content {
   padding: 16px;
   border-radius: 0 0 2px 2px;
   background-clip: padding-box;
   box-sizing: border-box;
 }
-.card .card-content p {
+.card-shadow .card-shadow-content p {
   margin: 0;
   color: inherit;
 }
-.card .card-content span.card-title {
+.card-shadow .card-shadow-content span.card-shadow-title {
   line-height: 48px;
 }
-.card .card-action {
+.card-shadow .card-shadow-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 16px;
 }
-.card .card-action a {
+.card-shadow .card-shadow-action a {
   color: #ffab40;
   margin-right: 16px;
   transition: color 0.3s ease;
   text-transform: uppercase;
 }
-.card .card-action a:hover {
+.card-shadow .card-shadow-action a:hover {
   color: #ffd8a6;
   text-decoration: none;
 }
@@ -248,4 +248,50 @@ width: 100%;
 .commenter-image {
   width: 50px;
   height: 50px;
+}
+
+
+.profile-avatar {
+  max-width: 80px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: transparent;
+}
+
+.book-thumbnail {
+  width: 100%;
+  height: 215px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.book-sidebar-thumbnail {
+  width: 100%;
+  height: 155px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.book-sidebar-review-thumbnail {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.nav-link-profile, .nav-link-profile:hover {
+  color: #808080;
+}
+
+.nav-link-profile.active {
+  color: #111 !IMPORTANT;
+  font-weight: normal;
+}
+
+.profile-sidebar-review {
+  background: #efefef;
+  border-radius: 10px;
 }

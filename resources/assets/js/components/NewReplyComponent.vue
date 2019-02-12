@@ -2,11 +2,11 @@
   <div>
     <div v-if="signedIn">
       <fieldset class="form-group text-right mt-4">
-        <label for="exampleTextarea">نقد خود را بنویسید</label>
+        <label for="exampleTextarea">نظر خود را بنویسید</label>
         <textarea v-model="body" class="form-control" id="exampleTextarea" rows="5"></textarea>
       </fieldset>
 
-      <button type="submit" class="btn btn-primary" @click="addReply">ثبت نقد</button>
+      <button type="submit" class="btn btn-primary" @click="addReply">ثبت نظر</button>
     </div>
     <div v-else>
       <p class="text-right text-muted py-3">برای مشارکت در این نقد لطفاً به سیستم وارد شوید</p>

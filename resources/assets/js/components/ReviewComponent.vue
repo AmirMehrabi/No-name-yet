@@ -1,5 +1,5 @@
 <template>
-        <div class="review text-right my-2 w-100 mb-3 border-bottom pb-2">
+        <div class="review text-right my-2 w-100 mb-5 border-bottom pb-2">
             <div class="d-flex flex-row align-items-center">
                 <div class="mr-auto py-2 bd-highlight">
                   {{ dataSet.created_at | moment("dddd, Do jMMMM") }}
@@ -40,7 +40,7 @@
 
 
 
-              <div class="card-footer d-flex flex-row bd-highlight">
+              <div class=" d-flex flex-row bd-highlight">
 
                 <div class=" bd-highlight m-1">
                    <favorite :data="data"></favorite>
@@ -81,11 +81,12 @@ export default {
   data() {
     return {
       editing: false,
+      dataSet: this.data,
       body: this.data.body,
       replies: this.data.replies,
       owner: this.data.owner.name,
-      repliesCount: this.data.length,
-      dataSet: this.data
+      repliesCount: this.data.length
+      
     };
   },
   methods: {
