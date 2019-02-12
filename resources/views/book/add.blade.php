@@ -1,8 +1,9 @@
 @extends('layouts.master')
 
-@include('layouts.navbar')
+
 
 @section('content')
+@include('partial.navbar')
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-7">
@@ -61,7 +62,7 @@
                         <strong>{{ $errors->first('description') }}</strong>
                     </span>
                   </fieldset>
-                  <input name="user_id" type="text" value="1" class="form-control rtl" id="" placeholder="سال نشر">
+                  <input name="user_id" type="hidden" value="1" class="form-control rtl" id="" placeholder="سال نشر">
 
                   {!! Form::submit('ثبت کتاب', ['class' => 'btn btn-success btn-block']) !!}
                   {!! Form::close() !!}

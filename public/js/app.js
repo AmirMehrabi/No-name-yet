@@ -63495,6 +63495,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -64091,28 +64093,24 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "comment-section border-bottom mt-2" }, [
-      _c("div", { staticClass: "d-flex w-100 text-right" }, [
+    _c("div", { staticClass: "comment-section border-bottom mt-2 rtl" }, [
+      _c("div", { staticClass: "d-flex  w-100 text-right" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "p-2 flex-fill bd-highlight mt-2" }, [
-          _c(
-            "div",
-            { staticClass: "d-flex bd-highlight flex-row-reverse pb-3" },
-            [
-              _c("div", { staticClass: "text-daneh font-weight-bold ml-auto" }),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "flex-shrink-1 bd-highlight text-muted" },
-                [
-                  _vm._v(
-                    _vm._s(_vm._f("moment")(_vm.created_at, "dddd, Do jMMMM"))
-                  )
-                ]
-              )
-            ]
-          ),
+        _c("div", { staticClass: "p-2 flex-fill order-2 bd-highlight mt-2" }, [
+          _c("div", { staticClass: "d-flex bd-highlight  pb-3" }, [
+            _c("div", { staticClass: "text-daneh font-weight-bold ml-auto" }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex-shrink-1 bd-highlight text-muted" },
+              [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(_vm.created_at, "dddd, Do MMMM"))
+                )
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("p", {
             staticClass: "text-justify",
@@ -64139,16 +64137,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "p-2 bd-highlight align-self-center" }, [
-      _c("img", {
-        staticClass: "commenter-image rounded-circle",
-        attrs: {
-          src:
-            "https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png",
-          alt: ""
-        }
-      })
-    ])
+    return _c(
+      "div",
+      { staticClass: "p-2 order-1 bd-highlight align-self-center" },
+      [
+        _c("img", {
+          staticClass: "commenter-image rounded-circle",
+          attrs: {
+            src:
+              "https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png",
+            alt: ""
+          }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -65001,7 +65003,33 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-footer d-flex flex-row bd-highlight" }, [
-        _c("div", { staticClass: " bd-highlight mr-3" }, [
+        _c(
+          "div",
+          { staticClass: " bd-highlight m-1" },
+          [_c("favorite", { attrs: { data: _vm.data } })],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: " bd-highlight m-1" }, [
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-sm text-muted",
+              attrs: {
+                "data-toggle": "collapse",
+                href: "#collapseComments-" + _vm.data.id,
+                role: "button",
+                "aria-expanded": "false"
+              }
+            },
+            [
+              _c("i", { staticClass: "fa fa-reply" }),
+              _vm._v(" " + _vm._s(_vm.data.replies.length) + " ")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: " bd-highlight m-1" }, [
           _c(
             "button",
             {
@@ -65015,33 +65043,7 @@ var render = function() {
             },
             [_vm._v("ویرایش")]
           )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: " bd-highlight mr-3" }, [
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-sm text-muted",
-              attrs: {
-                "data-toggle": "collapse",
-                href: "#collapseComments-" + _vm.data.id,
-                role: "button",
-                "aria-expanded": "false"
-              }
-            },
-            [
-              _vm._v(" " + _vm._s(_vm.data.replies.length) + " "),
-              _c("i", { staticClass: "fa fa-reply" })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: " bd-highlight" },
-          [_c("favorite", { attrs: { data: _vm.data } })],
-          1
-        )
+        ])
       ]),
       _vm._v(" "),
       _c(
@@ -65053,7 +65055,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "card card-body text-right rtl text-dark" },
+            { staticClass: "card card-body text-right rtl text-dark mr-5" },
             [
               _c("replies", {
                 attrs: { data: _vm.data.replies, propid: _vm.data.id }

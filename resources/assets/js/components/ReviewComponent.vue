@@ -41,23 +41,25 @@
 
 
               <div class="card-footer d-flex flex-row bd-highlight">
-                  <div class=" bd-highlight mr-3">
-                      <button type="submit" class="btn btn-sm text-muted" @click="editing=true">ویرایش</button>
-                    </div>
-                <div class=" bd-highlight mr-3">
-                  <a class="btn btn-sm text-muted" data-toggle="collapse" :href="'#collapseComments-'+data.id" role="button" aria-expanded="false"> {{data.replies.length}} <i class="fa fa-reply"></i></a>
 
-                </div>
-
-                <div class=" bd-highlight">
+                <div class=" bd-highlight m-1">
                    <favorite :data="data"></favorite>
 
 
                 </div>
+                <div class=" bd-highlight m-1">
+                  <a class="btn btn-sm text-muted" data-toggle="collapse" :href="'#collapseComments-'+data.id" role="button" aria-expanded="false"> <i class="fa fa-reply"></i> {{data.replies.length}} </a>
+
+                </div>
+
+
+                                  <div class=" bd-highlight m-1">
+                      <button type="submit" class="btn btn-sm text-muted" @click="editing=true">ویرایش</button>
+                    </div>
               </div>
 
               <div class="collapse" :id="'collapseComments-'+data.id">
-                <div class="card card-body text-right rtl text-dark">
+                <div class="card card-body text-right rtl text-dark mr-5">
                   <replies :data="data.replies" :propid="data.id"></replies>
                   <!-- <replies :data="dataSet.replies"></replies> -->
                 </div>

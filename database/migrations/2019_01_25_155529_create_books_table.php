@@ -25,7 +25,7 @@ class CreateBooksTable extends Migration
             $table->string('publisher')->nullable();
             $table->string('number_of_pages')->nullable();
             $table->longText('description')->nullable();
-            $table->year('publication_year')->nullable();
+            $table->integer('publication_year')->nullable();
             $table->timestamps();
         });
     }

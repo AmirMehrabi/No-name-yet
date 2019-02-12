@@ -45,21 +45,22 @@
 
 
               <div class="card-footer d-flex flex-row bd-highlight">
-                  <div class=" bd-highlight mr-3">
-                      <button type="submit" class="btn btn-sm text-muted" @click="editing=true">ویرایش</button>
+                  <div class=" bd-highlight">
+                      <favorite :data="{{$review}}"></favorite>
+                      {{-- <form method="POST" action="/reviews/{{$review->id}}/favorites">
+                        {!! csrf_field() !!}
+                      </form> --}}
+    
                     </div>
                 <div class=" bd-highlight mr-3">
                   <a class="btn btn-sm text-muted" data-toggle="collapse" href="#collapseComments-{{$review->id}}" role="button" aria-expanded="false" aria-controls="collapseComments-{{$review->id}}"> ۱۲ <i class="fa fa-reply"></i></a>
 
                 </div>
 
-                <div class=" bd-highlight">
-                  <favorite :data="{{$review}}"></favorite>
-                  {{-- <form method="POST" action="/reviews/{{$review->id}}/favorites">
-                    {!! csrf_field() !!}
-                  </form> --}}
 
-                </div>
+                <div class=" bd-highlight mr-3">
+                    <button type="submit" class="btn btn-sm text-muted" @click="editing=true">ویرایش</button>
+                  </div>
               </div>
 
               <div class="collapse" id="collapseComments-{{$review->id}}">
