@@ -15,6 +15,14 @@ class CreateBookShelvesTable extends Migration
     {
         Schema::create('book_shelves', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('book_id');
+            $table->unsignedInteger('review_id')->nullable();
+            $table->integer('shelf');
+            $table->integer('rate')->nullable();
+            $table->integer('progress_')->nullable();
+            $table->timestamp('date_read')->nullable();
+
             $table->timestamps();
         });
     }
