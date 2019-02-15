@@ -16,9 +16,10 @@ class BookController extends Controller
     {
         $starttime = microtime(true);
         $books = Book::take(2000)->get();
-        $endtime = microtime(true); // Bottom of page
+        
 
         print_r($books);
+        $endtime = microtime(true); // Bottom of page
         printf("Page loaded in %f seconds", $endtime - $starttime);
     }
 
@@ -58,6 +59,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        
         return view('book.show', compact('book'));
     }
 

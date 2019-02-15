@@ -35,7 +35,12 @@ class BookShelfController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'shelf' => 'required',
+            'user_id' => 'required',
+            'book_id' => 'required',
+        ]);
+        dd($request->all());
     }
 
     /**

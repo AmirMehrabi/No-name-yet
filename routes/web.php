@@ -49,6 +49,9 @@ Route::post('book/{book}/reviews', 'ReviewController@store');
 Route::get('review/{review}/replies', 'ReplyController@ReviewReplies');
 Route::post('review/{review}/replies', 'ReplyController@store');
 
+// Managing book shelves
+Route::post('book/{book}/user/{user}/shelf/store', 'BookShelfController@store')->name('shelf.addBook');
+
 Route::resource('reply', 'ReplyController');
 Route::patch('/reply/{reply}', 'ReplyController@update');
 Route::post('/reply/{reply}/favorites', 'FavoritesController@storeReplyFavorite');
@@ -65,6 +68,9 @@ Route::get('/auth/google/callback', 'Auth\LoginController@handleProviderCallback
 
 
 Route::get('/crawler', 'PagesController@crawler');
+
+Route::get('/test/{id}', 'PagesController@test');
+
 
 Route::get('/subscription', 'PagesController@subscription');
 

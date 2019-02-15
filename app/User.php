@@ -27,5 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function bookShelf()
+    {
+        return $this->hasMany('App\BookShelf');
+    }
+
     
 }

@@ -119,6 +119,7 @@
                     <button class="btn btn-success btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       افزودن به لیست
                     </button>
+                  
                     @if (Auth::user())
                       <button class="btn btn-light border-0 btn-block mt-1  trigger">
                         نقد این کتاب
@@ -128,10 +129,50 @@
         
         
                     <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">خوانده شده</a>
-                      <a class="dropdown-item" href="#">در حال خواندن</a>
+                      {{-- Read --}}
+                      {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                        {!! Form::hidden('user_id', auth()->user()->id) !!}
+                        {!! Form::hidden('book_id', $book->id) !!}
+                        {!! Form::hidden('shelf', 1) !!}
+
+
+                        {!! Form::submit('خوانده شده', ['class' => 'dropdown-item']) !!}
+                      {!! Form::close() !!}
+
+                      {{-- For reading --}}
+                      {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                        {!! Form::hidden('user_id', auth()->user()->id) !!}
+                        {!! Form::hidden('book_id', $book->id) !!}
+                        {!! Form::hidden('shelf', 2) !!}
+
+
+                        {!! Form::submit('برای خواندن', ['class' => 'dropdown-item']) !!}
+                      {!! Form::close() !!}
+
+
+                      {{-- Reading --}}
+                      {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                      {!! Form::hidden('user_id', auth()->user()->id) !!}
+                      {!! Form::hidden('book_id', $book->id) !!}
+                      {!! Form::hidden('shelf', 3) !!}
+
+
+                      {!! Form::submit('می‌خواهم بخوانم', ['class' => 'dropdown-item']) !!}
+                    {!! Form::close() !!}
+
+
+                    {{-- Unfinished --}}
+                    {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                    {!! Form::hidden('user_id', auth()->user()->id) !!}
+                    {!! Form::hidden('book_id', $book->id) !!}
+                    {!! Form::hidden('shelf', 4) !!}
+
+
+                    {!! Form::submit('خوانده شده', ['class' => 'dropdown-item']) !!}
+                  {!! Form::close() !!}
+                      {{-- <a class="dropdown-item" href="#">در حال خواندن</a>
                       <a class="dropdown-item" href="#">می‌خواهم بخوانم</a>
-                      <a class="dropdown-item" href="#">ناتمام</a>
+                      <a class="dropdown-item" href="#">ناتمام</a> --}}
                     </div>
                   </div>
                 </div>

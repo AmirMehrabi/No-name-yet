@@ -8,10 +8,29 @@ class Book extends Model
 {
     protected $fillable = ['user_id', 'title', 'image_src', 'author', 'translator', 'isbn', 'publisher', 'number_of_pages', 'description', 'publication_year'];
 
-    protected $appends = ['reviews'];
+    protected $appends = [ 'averageRate'];
 
     public function reviews()
     {
       return $this->hasMany(Review::class);
+    }
+
+    public function bookShelf()
+    {
+      return $this->hasMany(BookShelf::class);
+    }
+
+    public function getAverageRateAttribute(){
+      return round($this->bookShelf()->avg('rate'), 1);
+    }
+
+    public function getBookShelfAttribute() {
+      if(auth()->user()) {
+        return $this->bookShelf()->where('user_id', auth()->user()->id)->where('book_id', $this->id)->first();
+      }
+      else {
+        return;
+      }
+      
     }
 }

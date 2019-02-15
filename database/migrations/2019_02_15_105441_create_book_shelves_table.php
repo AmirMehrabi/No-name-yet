@@ -22,8 +22,9 @@ class CreateBookShelvesTable extends Migration
             $table->integer('rate')->nullable();
             $table->integer('progress_')->nullable();
             $table->timestamp('date_read')->nullable();
-
             $table->timestamps();
+
+            $table->index(['user_id', 'book_id']);
         });
     }
 

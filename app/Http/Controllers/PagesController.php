@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Goutte\Client;
 use App\Book;
+use App\BookShelf;
 use App\Review;
 use App\Notifications\ReviewWasUpdated;
 use Response;
@@ -19,6 +20,14 @@ class PagesController extends Controller
 
     public function profile() {
         return view('profile.index');
+    }
+
+    public function test($id) {
+        $book = Book::findOrFail($id);
+
+        $shelf = BookShelf::all()->avg('rate');
+
+        dd($shelf);
     }
 
     public function crawler()
