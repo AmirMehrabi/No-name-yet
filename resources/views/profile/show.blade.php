@@ -17,7 +17,7 @@
                                 <img src="images/profiles/amirmehrabi.jpg" class="profile-avatar rounded-circle" alt="">
                         </div>
                         <div class="m-1 p-1 text-right">
-                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">امیرمسعود مهرابیان</p> <br>
+                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">{{$user->name}}</p> <br>
                                 <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">amirmehrabian</p>
                         </div>
                 </div>

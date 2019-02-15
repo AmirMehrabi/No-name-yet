@@ -34,6 +34,9 @@ Route::delete('review/{review}/subscriptions', 'ReviewSubscriptionController@des
 Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
 
+// Profile Routes
+Route::resource('profile', 'ProfilesController');
+
 Route::post('review/{review}/favorites', 'FavoritesController@store');
 Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 
