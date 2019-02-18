@@ -17,7 +17,7 @@
 
 				<div class="col-md-12">
 					<div class="row">
-						<div class="d-flex w-100  flex-row-reverse">
+						<div class="d-flex w-100">
 							<div class="p-2 bd-highlight w-25">
 								@if ($review->image_src)
 								<img src="{{URL::asset($review->image_src)}}" class="w-100 img-responsive rounded" alt="">
@@ -33,9 +33,7 @@
 									@if (Auth::user())
 									<subscribe-button :active="{{json_encode($review->isSubscribedTo)}}"></subscribe-button>
 
-									<button class="btn btn-light border-0 btn-block mt-1  trigger">
-										نقد این کتاب
-									</button>
+
 
 									
 
@@ -52,13 +50,13 @@
 								</div>
 							</div>
 							<div class="p-2 bd-highlight  flex-grow-1 w-75">
-								<div class="d-flex flex-row-reverse">
+								<div class="d-flex ">
 									<div class="d-flex align-self-center">
 										<h1 class="h5 font-weight-bold text-right color-daneh ml-4 mb-0">{{$review->book->title}}</h1>
 									</div>
 									<div class="d-flex align-self-center">
-										<h3 class="h6 text-right text-dark align-self-center mb-0">{{$review->owner->name}}</h3>
 										<img class="  rounded-circle mx-1" style="width: 35px; height: 35px;" src="{{$review->owner->avatar}}" alt="">
+										<h3 class="h6 text-right text-dark align-self-center mb-0">{{$review->owner->name}}</h3>
 
 									</div>
 									<div class="d-flex align-self-center mr-auto">
@@ -87,7 +85,7 @@
 								</div>
 
 								<div class="review-comments">
-									<div class="d-flex bd-highlight flex-row-reverse w-100 align-items-center  ">
+									<div class="d-flex bd-highlight  w-100 align-items-center  ">
 										<div class="p-2 bd-highlight">
 											<h2 class="h5 text-daneh font-weight-bold text-right mb-0">نظرهای این نقد</h2>
 										</div>
@@ -122,7 +120,7 @@
 											{{ csrf_field() }}
 											<input type="hidden" name="review_id" value="{{$review->id}}" placeholder="">
 
-											<div class="d-flex flex-row-reverse w-100 text-right">
+											<div class="d-flex  w-100 text-right">
 												<div class="p-2 bd-highlight align-self-start mt-3">
 													<img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
 													 class="commenter-image rounded-circle" alt="">
@@ -154,13 +152,13 @@
 				<div class="col-md-12">
 					<hr>
 					<h2 class="h5 text-daneh font-weight-bold text-right">دیگر نقدهای نوشته شده توسط {{$review->owner->name}}</h2>
-					<div class="d-flex flex-row-reverse w-100 text-right other-reviews">
+					<div class="d-flex w-100 text-right other-reviews">
 						<div class="p-2 bd-highlight w-10">
 							<img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png" class="w-100 rounded"
 							 alt="">
 						</div>
 						<div class="p-2 flex-fill bd-highlight mt-2 w-90">
-							<div class="d-flex bd-highlight flex-row-reverse pb-3">
+							<div class="d-flex bd-highlight pb-3">
 								<div class="text-daneh font-weight-bold ml-auto">قورباغه‌ات را قورت بده</div>
 								<div class="flex-shrink-1 bd-highlight text-muted">۴ ماه پیش</div>
 							</div>
@@ -170,13 +168,13 @@
 								به دیگران توصیه می‌کنید؟ به چه کسانی؟ آیا کتاب دیگری هم باید در همان باره نوشته شود؟</p>
 						</div>
 					</div>
-					<div class="d-flex flex-row-reverse w-100 text-right other-reviews">
+					<div class="d-flex w-100 text-right other-reviews">
 						<div class="p-2 bd-highlight w-10">
 							<img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png" class="w-100 rounded"
 							 alt="">
 						</div>
 						<div class="p-2 flex-fill bd-highlight mt-2 w-90">
-							<div class="d-flex bd-highlight flex-row-reverse pb-3">
+							<div class="d-flex bd-highlight pb-3">
 								<div class="text-daneh font-weight-bold ml-auto">قورباغه‌ات را قورت بده</div>
 								<div class="flex-shrink-1 bd-highlight text-muted">۴ ماه پیش</div>
 							</div>
@@ -186,13 +184,13 @@
 								به دیگران توصیه می‌کنید؟ به چه کسانی؟ آیا کتاب دیگری هم باید در همان باره نوشته شود؟</p>
 						</div>
 					</div>
-					<div class="d-flex flex-row-reverse w-100 text-right other-reviews">
+					<div class="d-flex w-100 text-right other-reviews">
 						<div class="p-2 bd-highlight w-10">
 							<img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png" class="w-100 rounded"
 							 alt="">
 						</div>
 						<div class="p-2 flex-fill bd-highlight mt-2 w-90">
-							<div class="d-flex bd-highlight flex-row-reverse pb-3">
+							<div class="d-flex bd-highlight pb-3">
 								<div class="text-daneh font-weight-bold ml-auto">قورباغه‌ات را قورت بده</div>
 								<div class="flex-shrink-1 bd-highlight text-muted">۴ ماه پیش</div>
 							</div>

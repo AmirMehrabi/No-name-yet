@@ -33,7 +33,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
-                <form class="text-right mx-3">
+                <form class="text-right mx-3" method="POST" >
 
                   <fieldset class="form-group">
                     <input type="email" class="form-control border-0 rtl" name="email" value="{{ old('email') }}" id="" placeholder=" ایمیل">
@@ -68,8 +68,8 @@
               <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
                 <form class="text-right mx-3">
                   <fieldset class="form-group">
-                    <input type="email" class="form-control border-0 rtl" name="email" value="{{ old('email') }}" id="" placeholder="نام کاربری">
-                    @if ($errors->has('email'))
+                    <input type="name" class="form-control border-0 rtl" name="name" value="{{ old('name') }}" id="" placeholder="نام کاربری">
+                    @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
