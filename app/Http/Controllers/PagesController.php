@@ -22,6 +22,10 @@ class PagesController extends Controller
         return view('profile.index');
     }
 
+    public function search() {
+        return view('search.index');
+    }
+
     public function test($id) {
         $book = Book::findOrFail($id);
 
