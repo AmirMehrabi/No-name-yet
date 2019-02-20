@@ -10,32 +10,18 @@
 @section('content')
 @include('partial.main-nav')
 
-
-
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div>
-                <ais-index
-                app-id="latency"
-                api-key="3d9875e51fbd20c7754e65422f7ce5e1"
-                index-name="bestbuy"
-                inline-template
-              >
-                <div>                <ais-search-box></ais-search-box>
-                    <ais-results>
-                      <template slot-scope="{ result }">
-                        <h2>
-                          <ais-highlight :result="result" attribute-name="name"></ais-highlight>
-                        </h2>
-                      </template>
-                    </ais-results></div>
-              </ais-index>
-            </div>
-        </div>
-    </div>
+  <ais-index app-id="{{ config('scout.algolia.id') }}" api-key="{{ config('scout.algolia.secret') }}" index-name="books">
+    <ais-search-box></ais-search-box>
+    <ais-results>
+      <template slot-scope="{ result }">
+        <p>
+          <ais-highlight :result="result" attribute-name="title"></ais-highlight>
+        </p>
+      </template>
+    </ais-results>
+  </ais-index>
 </div>
-
 @endsection
 
 

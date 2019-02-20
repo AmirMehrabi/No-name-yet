@@ -23,6 +23,11 @@ class BookController extends Controller
         printf("Page loaded in %f seconds", $endtime - $starttime);
     }
 
+    public function search()
+    {
+        return view('book.search');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

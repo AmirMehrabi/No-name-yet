@@ -300,3 +300,14 @@ width: 100%;
 .w-20 {
   width: 20%;
 }
+
+
+.book-search-result {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.search-book-img {
+  height: 260px;
+  object-fit: cover;
+}

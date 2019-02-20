@@ -2,7 +2,6 @@
 window._ = require('lodash');
 
 import InstantSearch from 'vue-instantsearch';
-
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -23,12 +22,13 @@ try {
 
 window.Vue = require('vue');
 
-window.Vue.use(InstantSearch);
 
 window.axios = require('axios');
 
 window.Vue.use(require('vue-jalali-moment'));
+Vue.use(InstantSearch);
 window.Vue.moment.locale('fa'); // 'en'
+
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

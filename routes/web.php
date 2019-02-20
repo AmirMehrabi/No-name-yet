@@ -25,7 +25,7 @@ Route::view('scan', 'scan');
 Route::get('book/show', function(){
   return view('book.show');
 });
-
+Route::get('book/search', 'BookController@search');
 Route::resource('book', 'BookController');
 
 Route::resource('review', 'ReviewController');
@@ -48,14 +48,14 @@ Route::delete('review/{review}/favorites', 'FavoritesController@destroy');
 // Pagination of reviews in book page
 Route::get('book/{book}/reviews', 'ReviewController@BookReviews');
 Route::post('book/{book}/reviews', 'ReviewController@store');
+// Managing book shelves
+Route::post('book/{book}/user/{user}/shelf/store', 'BookShelfController@store')->name('shelf.addBook');
 
 
 // Pagination of replies in review page
 Route::get('review/{review}/replies', 'ReplyController@ReviewReplies');
 Route::post('review/{review}/replies', 'ReplyController@store');
 
-// Managing book shelves
-Route::post('book/{book}/user/{user}/shelf/store', 'BookShelfController@store')->name('shelf.addBook');
 
 Route::resource('reply', 'ReplyController');
 Route::patch('/reply/{reply}', 'ReplyController@update');
