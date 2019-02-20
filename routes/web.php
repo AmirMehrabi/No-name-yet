@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::get('/profile', 'PagesController@profile');
 
-Route::get('/search', 'PagesController@search');
+Route::get('/search', 'SearchController@show');
+
+Route::view('scan', 'scan');
 
 
 Route::get('book/show', function(){

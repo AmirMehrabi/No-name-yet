@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
 
 class SearchController extends Controller
 {
@@ -43,9 +44,15 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $search = request('q');
+
+        $books = Book::search($search)->paginate(25);
+
+        
+       
+        return view('search.index', compact('books', 'search'));
     }
 
     /**

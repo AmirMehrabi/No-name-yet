@@ -15,7 +15,7 @@
 <div class="container">
         <div class="row">
                 <div class="col-12">
-                    
+
                         <ul class="nav nav-pills mb-3 rtl mt-2 border-bottom pr-0 pb-2" id="pills-tab" role="tablist">
                                 <li class="nav-item">
                                         <a class="nav-link nav-link-profile   active" id="pills-home-tab" data-toggle="pill"
@@ -40,70 +40,38 @@
         </div>
 
         <div class="row">
-                
+
 
 
 
 
                 <div class="col-12">
-                        <h1 class="h3 text-right my-2">[مورد جست‌وجو شده] در دسته‌ی کتاب</h1>
+                        <h1 class="h3 text-right my-2">{{$search}} در دسته‌ی کتاب</h1>
                         <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                         {{-- مطالعه کرده --}}
-
+                                        @foreach($books->chunk(5) as $book_chunk)
                                         <div class="d-flex flex-row mb-3">
-                                                <div class="p-1 m-1 flex-fill ">
-                                                        <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
-                                                                class="book-thumbnail" alt="">
-                                                        <div class="d-flex flex-row-reverse">
-                                                                <div class="flex-fill color-daneh text-right">نان
-                                                                        و سیاست</div>
-                                                                <div class=" color-daneh text-left">۶۶٪</div>
-                                                        </div>
-                                                        <p class="text-right">فئودور داستایوفسکی</p>
+                                                @foreach ($book_chunk as $book)
+                                                <div class="p-1 m-1 w-20">
+                                                        @if ($book->image_src)
+                                                        <img src="{{ URL::asset($book->image_src) }}"
+                                                        class="book-thumbnail" alt="">
+                                                                @else
+                                                                <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                                                        class="book-thumbnail" alt="">
+                                                        @endif
+                                                                
+                                                                <div class="d-flex">
+                                                                <div class="flex-fill color-daneh text-right">{{$book->title}}</div>
+                                                                </div>
+                                                                <p class="text-right">{{$book->author}}</p>
+                                                        </div>                                                    
+                                                @endforeach
+        
                                                 </div>
-                                                <div class="p-1 m-1 flex-fill ">
-                                                    <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
-                                                            class="book-thumbnail" alt="">
-                                                    <div class="d-flex flex-row-reverse">
-                                                            <div class="flex-fill color-daneh text-right">نان
-                                                                    و سیاست</div>
-                                                            <div class=" color-daneh text-left">۶۶٪</div>
-                                                    </div>
-                                                    <p class="text-right">فئودور داستایوفسکی</p>
-                                            </div>
-                                                <div class="p-1 m-1 flex-fill ">
-                                                        <img src="{{ URL::asset('images/books/-1549109737book.jpg') }}"
-                                                                class="book-thumbnail" alt="">
-                                                        <div class="d-flex flex-row-reverse">
-                                                                <div class="flex-fill color-daneh text-right">حاصل
-                                                                        عمر</div>
-                                                                <div class=" color-daneh text-left">۶۶٪</div>
-                                                        </div>
-                                                        <p class="text-right">آلبرت انیشتین</p>
-                                                </div>
-                                                <div class="p-1 m-1 flex-fill ">
-                                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
-                                                                class="book-thumbnail" alt="">
-                                                        <div class="d-flex flex-row-reverse">
-                                                                <div class="flex-fill color-daneh text-right">قمار
-                                                                        باز</div>
-                                                                <div class=" color-daneh text-left">۶۶٪</div>
-                                                        </div>
-                                                        <p class="text-right">فئودور داستایوفسکی</p>
-                                                </div>
-                                                <div class="p-1 m-1 flex-fill ">
-                                                        <img src="{{ URL::asset('images/books/-1549109757book.jpg') }}"
-                                                                class="book-thumbnail" alt="">
-                                                        <div class="d-flex flex-row-reverse">
-                                                                <div class="flex-fill color-daneh text-right">جان
-                                                                        شیفته</div>
-                                                                <div class=" color-daneh text-left">۶۶٪</div>
-                                                        </div>
-                                                        <p class="text-right">رومن رولان</p>
-                                                </div>
+                                        @endforeach
 
-                                        </div>
 
 
                                         {{-- مطالعه کرده --}}
