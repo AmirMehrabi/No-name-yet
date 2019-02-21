@@ -311,3 +311,10 @@ width: 100%;
   height: 260px;
   object-fit: cover;
 }
+
+
+.search-box {
+  padding: 2em;
+  background: #f2f2f2;
+  
+}

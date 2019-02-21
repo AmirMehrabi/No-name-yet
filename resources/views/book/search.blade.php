@@ -46,11 +46,19 @@
 
 
             <div class="col-12">
-                <h1 class="h3 text-right my-2"> در دسته‌ی کتاب</h1>
+                
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         {{-- مطالعه کرده --}}
                         <div class="row  nogap mb-3">
+                                <h1 class="h3 text-right my-2"> در دسته‌ی کتاب</h1>
+                                <div class="search-box form-group w-100">
+                                  <label for=""></label>
+                                  <ais-search-box >
+                                      <ais-input placeholder="دنبال چه کتابی می‌گردید؟"  :autofocus="true" class="form-control"></ais-input>
+                                  </ais-search-box>
+                                  {{-- <small id="helpId" class="text-muted">Help text</small> --}}
+                                </div>
                             <ais-results class="">
                                 <template slot-scope="{ result }">
 
