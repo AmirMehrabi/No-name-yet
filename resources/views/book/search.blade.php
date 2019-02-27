@@ -64,7 +64,7 @@
 
                                     <div class="  col-md-3 col-sm-6 col-xs-12  form-group d-inline-block ">
                                         <div class="m-1 p-1 book-search-result rounded">
-                                                <img v-bind:src="'/' + result.image_src" class="w-100  img-responsive rounded search-book-img" v-if="result.image_src" />
+                                                <img v-bind:src="'/no-name-yet/public/' + result.image_src" class="w-100  img-responsive rounded search-book-img" v-if="result.image_src" />
                                                 <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png" class="w-100  img-responsive rounded search-book-img" v-else />
 
 

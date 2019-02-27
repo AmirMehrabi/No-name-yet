@@ -18,7 +18,8 @@
           json_encode([
             'csrfToken' => csrf_token(),
             'signedIn' => Auth::check(),
-            'user' => auth()->user()
+            'user' => auth()->user(),
+            'baseUrl' => json_encode(url('/'))
         ]) !!}; 
            
         
