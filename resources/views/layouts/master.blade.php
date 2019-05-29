@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>دانه | @yield('title')</title>
+    <title>کیوسک | @yield('title')</title>
 
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}" >
     <link rel="stylesheet" href="{{URL::asset('css/css/style.css')}}">

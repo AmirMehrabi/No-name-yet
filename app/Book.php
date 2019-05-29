@@ -28,7 +28,7 @@ class Book extends Model
 
     public function getShelfAttribute() {
       if(auth()->user()) {
-        return $this->bookShelf()->where('user_id', auth()->user()->id)->where('book_id', $this->id)->first();
+        return $this->bookShelf()->where('user_id', auth()->user()->id)->where('book_id', $this->id)->orderBy('created_at', 'desc')->first();
       }
       else {
         return ;

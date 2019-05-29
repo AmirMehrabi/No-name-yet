@@ -1,320 +1,443 @@
-
+@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
 body {
-  font-family: 'Samim';
+	font-family: IRANSans !important;
+	font-weight: 300;
+	direction: rtl;
+	/* background-color: #E2E2E2; */
+	margin: 0;
+}
 
+a:hover {
+    color: #b3975a;
+    text-decoration: none;
+}
+
+a {
+    color: #c1aa78;
+    text-decoration: none;
+    background-color: transparent;
+}
+h1, h2, h3, h4, h5, h6,input, textarea {
+	font-family: IRANSans !important;
+	direction: rtl;
+	text-align: right;
 }
 
 p {
-  direction: rtl;
+	font-family: IRANSans !important;
+	direction: rtl;
+	text-align: right;
+}
+h1 {
+	font-weight: bold;
+}
+.wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+}
+.ltr {
+	direction: ltr;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-small {
+	font-size: 0.8em;
+}
+.text-xsmall {
+	font-size: 0.6em;
+}
+.text-large {
+	font-size: 1.2em;
+}
+.text-xlarge {
+	font-size: 1.4em;
+}
+.text-underline {
+	text-decoration:underline;
+}
+.text-ultralight {
+	font-weight: 200;
+}
+.text-light {
+	font-weight: 300;
+}
+.text-regular {
+	font-weight: normal;
+}
+.text-medium {
+	font-weight: 500;
+}
+.text-bold {
+	font-weight: bold;
+}
+blockquote {
+	font-weight: 500;
+	padding: 10px;
+	border: 1px dashed #666666;
 }
 
+.mainbox {
+	width: 100%;
+	background-color: #EFEFEF;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #FFFF33;
+}
+
+.mainboxnegativ {
+	width: 100%;
+	background-color: #000000;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #FFFF33;
+	color: #F9F9F9;
+}
+
+.mainbox2 {
+	font-size: 1em;
+	width: 90%;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mainbox3 {
+	width: 100%;
+	background-color: #b8b8b8;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #bd70ff;
+}
+
+.mainbox2negativ {
+	font-size: 1em;
+	color: #F9F9F9;
+	background-color: #000000;
+	padding-right: 20px;
+}
+
+.farsiparagraph {
+	font-size: 1em;
+	width: 47%;
+	float:right;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+.englishparagraph {
+	font-size: 1em;
+	width: 47%;
+	float: left;
+	direction:ltr;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+
+}
+.rightbox {
+	width: 60%;
+	padding-right: 20px;
+	padding-left: 5px;
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	min-width: 0px;
+	background-color: #F7F7F7;
+
+}
+
+.titelbox {
+	width: 60%;
+	padding-right: 25px;
+	padding-left: 0px;
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	min-width: 0px;
+	background-color: #F2F2F2;
+	color: #4B4B4B;
+}
+
+
+.lefttbox {
+	
+	padding-right: 20px;
+	padding-left: 4px;
+	float: right;
+	margin-bottom: 10px;
+	min-width: 0px;
+}
+
+.alphabet {
+	width: 35%;
+	float: left;
+	font-size: 21em;
+	text-align: center;
+	font-weight: 500;
+	color: #999999;
+}
+
+.IRANSans {
+	font-family: IRANSans !important;
+}
 
 .rtl {
-  direction: rtl;
+    direction: rtl;
 }
 
-.intro {
-  background: url('../img/intro-reading.jpg') no-repeat center center fixed;
-background-size: cover;
+.ltr {
+    direction: ltr;
 }
 
-.intro-overlay:before{
-  position: absolute;
-  content:" ";
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display: block;
-  z-index:0;
-  background-color: rgba(255,0,0,0.5);
+.alphabet2 {
+	width: 35%;
+	float: left;
+	direction: ltr;
+	font-size: 1.6em;
+	text-align: left;
+	font-weight: 500;
+	color: #333333;
+	margin-top: 100px;
+}
+.footer {
+	font-weight: 300;
+	font-size: 0.7em;
+	text-align: center;
+	direction: ltr;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 
-.card-shadow {
-  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.36), 0 7px 20px 0 rgba(0, 0, 0, 0.25);
-}
-
-.card-shadow {
-  margin-top: 10px;
-  box-sizing: border-box;
-  border-radius: 2px;
-  background-clip: padding-box;
-}
-.card-shadow span.card-shadow-title {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-.card-shadow .card-shadow-image {
-  position: relative;
-  overflow: hidden;
-}
-.card-shadow .card-shadow-image img {
-  border-radius: 2px 2px 0 0;
-  background-clip: padding-box;
-  position: relative;
-  z-index: -1;
-}
-.card-shadow .card-shadow-image span.card-shadow-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 16px;
-}
-.card-shadow .card-shadow-content {
-  padding: 16px;
-  border-radius: 0 0 2px 2px;
-  background-clip: padding-box;
-  box-sizing: border-box;
-}
-.card-shadow .card-shadow-content p {
-  margin: 0;
-  color: inherit;
-}
-.card-shadow .card-shadow-content span.card-shadow-title {
-  line-height: 48px;
-}
-.card-shadow .card-shadow-action {
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 16px;
-}
-.card-shadow .card-shadow-action a {
-  color: #ffab40;
-  margin-right: 16px;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-}
-.card-shadow .card-shadow-action a:hover {
-  color: #ffd8a6;
-  text-decoration: none;
-}
-
-.login-background {
-  background:
-  linear-gradient(
-    rgba(251, 251, 251, 0.55),
-    rgba(251, 251, 251, 0.55)
-  ),
-  url("img/guy-reading-book.jpg");
-
-  height: 100%; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+.fa, .far, .fas {
+    vertical-align: sub;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-#focusedInput {
-  border-color: #ccc;
-  border-color: rgba(82,168,236,.8);
-  outline: 0;
-  box-shadow: none;
+/* Navbar styles */
+.navbar {
+	padding: 0.1rem 1rem !IMPORTANT;
 }
 
-.r-0 {
-  right: 0px;
+.img-navbar {
+    width: 27px;
+    vertical-align: text-bottom;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    background: #272a2d82;
+}
+
+.navbar-collapse {
+	text-align: right;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: .75rem;
+        padding-left: .75rem;
+    }
 }
 
 
-.raibow-botton-border {
-  border-bottom: 8px solid;
-  border-image:linear-gradient(to right,
-    #61c2e4 0%, #61c2e4 25%,
-    #f0766b 25%, #f0766b 50%,
-    #fad071 50%, #fad071 75%,
-    #c4e17f 75%, #c4e17f 100%) 10;
+
+/* End of navbar styles */
+
+
+
+
+
+/* Sticky Sidebar */
+
+
+.content-section {
+	min-height: 2000px;
   }
-
-  .similar-book-img {
-    height: 152px;
-    object-fit: cover;
+  
+  .sidebar-section {
+	position: absolute;
+	height: 100%;
+	width: 100%;
   }
+  
+  .sidebar-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Position the items */
+  }
+  
+  .make-me-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 60px;
+  }
+  
+/* End of sticky sidebar */
 
 
-  .nopadding {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.bg {
-  background-color: #f3f3f3;
-}
-
-.left {
-  min-height: 100%;
-}
-
-#intro-background {
-  min-height: 100%;
-}
-
-.img-bg {
-  margin-right: 0px !important;
-  min-height: 100%;
-  background: url(http://placehold.it/850x650) no-repeat center center;
-  background-size: cover;
-}
-
-.text-daneh {
-  color: #908852;
-}
-
-.bg-daneh {
-  background: #908852;
-}
-
-.color-daneh {
-  color: #908852;
-}
-.nav-link {
-  color: #212529;
-}
-
-.nav-link.active {
-  color: #908852 !IMPORTANT;
-  font-weight: bold;
-}
-
-.footer{
-  position: absolute;
-  left: 0;
-bottom: 0;
-width: 100%;
-}
-
-.navbar-light .navbar-nav .active>.nav-link {
-  color: #908852;
-  border-bottom: 2px solid #908852;
-}
-
-.book-rating {
-  font-size: 55%;
-  float: left;
-  direction: rtl;
-}
-
-.book-meta-data {
-  border-top: 1px solid #cecece;
-  border-bottom: 1px solid #cecece;
-}
-
-.review-profile-pic {
-  max-width: 40px;
-}
-
-.review {
-
-}
-
-.nav-item-icon {
-  font-size: 125%;
-}
-
-.slider {
-  right: 9%;
-  position: fixed;
-  width: 70%;
-  height: 50%;
-  bottom: 0;
-  overflow: hidden;
-  /* background-color: #a7a7a773; */
-  transition: all 500ms;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
-}
-
-.slider.close {
-  bottom: -10%;
-  height: 0;
-}
-[v-cloak] { 
-  display: none;
-}
-
-.commenter-image {
-  width: 50px;
-  height: 50px;
+.bg-light {
+    background-color: #ececec!important;
 }
 
 
-.profile-avatar {
-  max-width: 80px;
+.rounded-lg {
+    border-radius: .75rem!important;
 }
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background-color: transparent;
-}
-
-.book-thumbnail {
-  width: 100%;
-  height: 215px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-
-.book-sidebar-thumbnail {
-  width: 100%;
-  height: 155px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.book-sidebar-review-thumbnail {
-  width: 100%;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-
-.nav-link-profile, .nav-link-profile:hover {
-  color: #808080;
-}
-
-.nav-link-profile.active {
-  color: #111 !IMPORTANT;
-  font-weight: normal;
-}
-
-.profile-sidebar-review {
-  background: #efefef;
-  border-radius: 10px;
-}
-
 
 .w-20 {
-  width: 20%;
+	width: 20% !IMPORTANT;
+}
+
+.w-30 {
+	width: 30% !IMPORTANT;
 }
 
 
-.book-search-result {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.search-book-img {
-  height: 260px;
-  object-fit: cover;
+.w-15 {
+	width: 15% !IMPORTANT;
 }
 
 
-.search-box {
-  padding: 2em;
-  background: #f2f2f2;
+.w-10 {
+	width: 10% !IMPORTANT;
+}
+
+
+.w-90 {
+	width: 90% !IMPORTANT;
+}
+.w-85 {
+	width: 85% !IMPORTANT;
+}
+
+.book-of-week-thumbnail {
+	width: 100%;
+	max-height: 200px;
+	object-fit: cover;
+}
+
+
+.writers-thumbnail {
+	width: 100%;
+	max-height: 250px;
+	object-fit: cover;
+}
+
+.writer-thumbnail {
+	max-height: 65px;
+	object-fit: cover;
+}
+
+.text-kioosk {
+	color: #9c8515;
+}
+
+
+
+.br-theme-bars-reversed .br-widget a {
+	background-color: pink;
+  }
   
+  .br-theme-bars-reversed .br-widget a.br-active,
+  .br-theme-bars-reversed .br-widget a.br-selected {
+	background-color: #ff446a;
+  }
+  
+  .br-theme-bars-reversed .br-widget .br-current-rating {
+	color: #ff446a;
+	font-size: 20px;  
+  }
+
+  .src-image {
+	display: none;
+  }
+  
+  .writer-card {
+	overflow: hidden;
+	position: relative;
+	border-radius: 8px;
+	text-align: center;
+	padding: 0;
+	background-color: #ececec;
+  }
+  
+  .writer-card .header-bg {
+	/* This stretches the canvas across the entire hero unit */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px #FFF solid;
+	/* This positions the canvas under the text */
+	z-index: 1;
+	background: #fff;
+  }
+  .writer-card .avatar {
+	position: relative;
+	margin-top: 20px;
+	z-index: 100;
+  }
+  
+  .writer-card .avatar img {
+	width: 80px;
+	height: 80px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 4px solid #fff;
+  }
+  
+
+  .btn-kioosk {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+/* Colors */
+
+.bg-kioosk {
+	background: #c1aa78;
+}
+
+.text-kioosk {
+	color: #c1aa78;
+}
+
+.btn-kioosk {
+    color: #fff;
+    background-color: #c1aa78;
+    border-color: #c1aa78;
+}
+
+.btn-kioosk:hover {
+    color: #fff;
+    background-color: #b3975a;
+    border-color: #b3975a;
+}
+
+.btn-outline-kioosk {
+    color: #c1aa78;
+    border-color: #c1aa78;
+}
+
+.btn-outline-kioosk:hover{
+    color: #fff;
+    background-color: #b3975a;
+    border-color: #b3975a;
 }

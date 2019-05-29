@@ -39,13 +39,60 @@
                             می‌خواهم بخوانم
                               @elseif($book->shelf->shelf == 4)
                                   ناتمام
-                              @endif
+                          @endif
                             </button>
                                 
                             @else
-                            <button class="btn btn-success btn-block mt-1 dropdown-toggle" type="button">
+                            <button class="btn btn-success btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton">
                                 افزودن به لیست
                               </button>
+                              <div class="dropdown">
+                                  <button class="btn btn-success btn-block mt-1 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      افزودن به لیست
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                                      {!! Form::hidden('user_id', auth()->user()->id) !!}
+                                      {!! Form::hidden('book_id', $book->id) !!}
+                                      {!! Form::hidden('shelf', 1) !!}
+              
+              
+                                      {!! Form::submit('خوانده شده', ['class' => 'dropdown-item']) !!}
+                                    {!! Form::close() !!}
+              
+                                    {{-- For reading --}}
+                                    {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                                      {!! Form::hidden('user_id', auth()->user()->id) !!}
+                                      {!! Form::hidden('book_id', $book->id) !!}
+                                      {!! Form::hidden('shelf', 2) !!}
+              
+              
+                                      {!! Form::submit('برای خواندن', ['class' => 'dropdown-item']) !!}
+                                    {!! Form::close() !!}
+              
+              
+                                    {{-- Reading --}}
+                                    {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                                    {!! Form::hidden('user_id', auth()->user()->id) !!}
+                                    {!! Form::hidden('book_id', $book->id) !!}
+                                    {!! Form::hidden('shelf', 3) !!}
+              
+              
+                                    {!! Form::submit('می‌خواهم بخوانم', ['class' => 'dropdown-item']) !!}
+                                  {!! Form::close() !!}
+              
+              
+                                  {{-- Unfinished --}}
+                                  {!! Form::open(['route' => ['shelf.addBook', $book->id, auth()->user()->id] ]) !!}
+                                  {!! Form::hidden('user_id', auth()->user()->id) !!}
+                                  {!! Form::hidden('book_id', $book->id) !!}
+                                  {!! Form::hidden('shelf', 4) !!}
+              
+              
+                                  {!! Form::submit('خوانده شده', ['class' => 'dropdown-item']) !!}
+                                {!! Form::close() !!}
+                                  </div>
+                                </div>
                             @endif
 
                       
@@ -57,7 +104,7 @@
 
 
             
-            
+
             
                         <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
                           {{-- Read --}}

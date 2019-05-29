@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BookShelf;
 use Illuminate\Http\Request;
+use Redirect;
 
 class BookShelfController extends Controller
 {
@@ -40,7 +41,13 @@ class BookShelfController extends Controller
             'user_id' => 'required',
             'book_id' => 'required',
         ]);
-        dd($request->all());
+
+        $book =  new BookShelf;
+        $book->shelf = $request->input('shelf');
+        $book->book_id = $request->input('book_id');
+        $book->user_id = $request->input('user_id');
+        $book->save();
+        return redirect::back()->with('flash', 'این کتاب به قفسه‌ی شما افزوده شد');
     }
 
     /**
