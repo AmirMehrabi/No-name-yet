@@ -14,9 +14,12 @@
 
     <div class="row">
         <div class="col-9">
+            @if (count($currently_reading))
+
             <h1 class="h5">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
 
-            <div class="card text-dark bg-light border-0 rounded-lg">
+            @foreach ($currently_reading as $current_book)
+            <div class="card text-dark bg-light border-0 rounded-lg mb-2">
 
                 <div class="card-body p-1">
                     <div class="d-flex ">
@@ -53,8 +56,11 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <hr>
+            @endif
+
 
             <!-- End of Book progress bar -->
 
@@ -100,6 +106,37 @@
 
             <!-- End of section of Books of the week -->
 
+
+            {{-- Start of section for random books --}}
+            <div class="d-flex flex-row  mb-3">
+                <div class="p-2 ">
+                    <h1 class="h5">کتاب‌های اتفاقی</h1>
+                </div>
+                <div class="p-2 ">
+                    <a href="#" class=""> دیدن همه</a>
+                </div>
+            </div>
+
+            <div class="d-flex ">
+                @foreach ($random_books as $random_book)
+                <div class="p-2 flex-fill w-20 text-right">
+                    @if ($random_book->image_src)
+                    <img src="{{URL::asset($random_book->image_src)}}" class="book-of-week-thumbnail rounded-lg" alt="">
+                    @else
+                    <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                        class="book-of-week-thumbnail rounded-lg" alt="">
+                    @endif
+                    <a href="{{route('book.show', $random_book->id)}}">{{$random_book->title}}</a>
+                    <p class="">{{$random_book->author}}</p>
+                </div>
+                @endforeach
+
+            </div>
+
+            <hr>
+
+            {{-- End of section for random books --}}
+
             <!-- Start of section for timeline -->
             <div class="d-flex flex-row  mb-3">
                 <div class="p-2 ">
@@ -135,7 +172,8 @@
                                 <p class="text-right text-muted mb-0">
                                     <div class="d-flex ">
                                         <div class="p-2  w-15">
-                                            <img src="{{URL::asset('images/books/1.jpg')}}" class="w-100 rounded-lg" alt="">
+                                            <img src="{{URL::asset('images/books/1.jpg')}}" class="w-100 rounded-lg"
+                                                alt="">
                                         </div>
                                         <div class="d-flex flex-column flex-fill  justify-content-between  ">
                                             <div class="p-2 ">
@@ -244,7 +282,8 @@
                                 <p class="text-right text-muted mb-0">
                                     <div class="d-flex ">
                                         <div class="p-2  w-15">
-                                            <img src="{{URL::asset('images/books/1.jpg')}}" class="w-100 rounded-lg" alt="">
+                                            <img src="{{URL::asset('images/books/1.jpg')}}" class="w-100 rounded-lg"
+                                                alt="">
                                         </div>
                                         <div class="d-flex flex-column flex-fill  justify-content-between  ">
                                             <div class="p-2 ">
@@ -371,7 +410,7 @@
             <!-- Sidebar -->
 
             <div class="sidebar-item">
-
+                @if (count($coreaders))
                 <div class="mb-4 text-center">
 
                     <div class="d-flex justify-content-center bd-highlight mb-3 text-center">
@@ -385,9 +424,11 @@
                             <img src="images/avatar.jpg" class="rounded-circle w-75" alt="">
                         </div>
                     </div>
-                    <p class="text-center">سورنا و سه نفر دیگر در حال مطالعه‌ی این کتاب هستند</p>
+                    <p class="text-center">{{count($coreaders)}} نفر در حال مطالعه‌ی این کتاب هستند</p>
                     <a href="#" class="btn btn-outline-kioosk rounded-lg btn-sm">دیدن تمام هم‌خوان‌ها</a>
                 </div>
+                @endif
+
                 <div class="mb-4">
                     <div class="d-flex flex-row bd-highlight mt-3 mb-2 border-bottom">
                         <div class=" flex-fill">
@@ -397,7 +438,8 @@
                     </div>
                     <div class="d-flex ">
                         <div class="p-2 flex-fill w-20">
-                            <img src="{{URL::asset('images/books/1.jpg')}}" class="book-of-week-thumbnail rounded-lg" alt="">
+                            <img src="{{URL::asset('images/books/1.jpg')}}" class="book-of-week-thumbnail rounded-lg"
+                                alt="">
                         </div>
                         <div class="p-2 flex-fill w-20">
                             <img src="images/books/2.jpg" class="book-of-week-thumbnail rounded-lg" alt="">
