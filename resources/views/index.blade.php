@@ -14,54 +14,64 @@
 
     <div class="row">
         <div class="col-9">
-            @if (count($currently_reading))
+            @if (!empty($currently_reading))
 
             <h1 class="h5">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
             <div class="card text-dark bg-light border-0 rounded-lg mb-2">
 
-                    <div class="card-body p-1">
-                        <div class="d-flex ">
-                            <div class="p-2  w-15">
-                                    @if ($currently_reading[0]->image_src)
-                                    <img src="{{URL::asset($currently_reading[0]->image_src)}}" class="w-100 rounded-lg" alt="">
-                                    @else
-                                    <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
-                                        class="w-100 rounded-lg" alt="">
-                                    @endif
-                            </div>
-                            <div class="d-flex flex-column flex-fill  justify-content-between  ">
-                                <div class="p-2 ">
-                                    <div class="d-flex  ">
-                                        <div class="p-2 flex-fill ">
-                                        <p>{{$currently_reading[0]->title}}</p>
-                                        </div>
-                                        <div class="p-2 flex-fill ">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
-                                    </div>
-                                </div>
-                                <div class="p-2 ">
-                                    <p class="text-left text-muted mb-0">{{$currently_reading[0]->number_of_pages . 'صفحه'}}</p>
-                                    @if (!is_null($currently_reading_shelf[0]->progress))
-                                    <div class="progress bg-white">
-    
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%"
-                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>                                        
-                                    @endif
-
-                                </div>
-                                <div class="d-flex ">
-                                    <div class="p-2 flex-fill ">
-                                        <p>۵۹ نقد دارد</p>
-                                    </div>
-                                    <div class="p-2 ">به روز رسانی مطالعه</div>
-    
-                                    <div class="p-2 ">به روز رسانی مطالعه</div>
-                                </div>
-                            </div>
-    
+                <div class="card-body p-1">
+                    <div class="d-flex ">
+                        <div class="p-2  w-15">
+                            @if (!empty($currently_reading->image_src))
+                            <img src="{{URL::asset($currently_reading->image_src)}}" class="w-100 rounded-lg" alt="">
+                            @else
+                            <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                                class="w-100 rounded-lg" alt="">
+                            @endif
                         </div>
+                        <div class="d-flex flex-column flex-fill  justify-content-between  ">
+                            <div class="p-2 ">
+                                <div class="d-flex  ">
+                                    <div class="p-2 flex-fill ">
+                                        <p>{{$currently_reading->title}}</p>
+                                    </div>
+                                    <div class="p-2 flex-fill ">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                @if (!empty($currently_reading_shelf->progress))
+                                <p class="text-left text-muted mb-0">{{$currently_reading->number_of_pages . 'صفحه'}}
+                                </p>
+
+                                <div class="progress bg-white">
+
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                @else
+                                <p class="text-left text-muted mb-0">مقدار خوانده شده: نامشخص
+
+                                <div class="progress bg-white">
+
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"></div>
+                                </div>
+                                @endif
+
+                            </div>
+                            <div class="d-flex ">
+                                <div class="p-2 flex-fill ">
+                                    <p>۵۹ نقد دارد</p>
+                                </div>
+                                <div class="p-2 ">به روز رسانی مطالعه</div>
+
+                                <div class="p-2 ">به روز رسانی مطالعه</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
             <hr>
             @endif
 
@@ -414,7 +424,7 @@
             <!-- Sidebar -->
 
             <div class="sidebar-item">
-                @if (count($coreaders))
+                @if (!empty($coreaders))
                 <div class="mb-4 text-center">
 
                     <div class="d-flex justify-content-center bd-highlight mb-3 text-center">
@@ -428,7 +438,7 @@
                             <img src="images/avatar.jpg" class="rounded-circle w-75" alt="">
                         </div>
                     </div>
-                    <p class="text-center">{{count($coreaders)}} نفر در حال مطالعه‌ی این کتاب هستند</p>
+                    <p class="text-center">{{!empty($coreaders)}} نفر در حال مطالعه‌ی این کتاب هستند</p>
                     <a href="#" class="btn btn-outline-kioosk rounded-lg btn-sm">دیدن تمام هم‌خوان‌ها</a>
                 </div>
                 @endif
