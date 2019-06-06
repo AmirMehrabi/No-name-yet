@@ -17,47 +17,51 @@
             @if (count($currently_reading))
 
             <h1 class="h5">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
-
-            @foreach ($currently_reading as $current_book)
             <div class="card text-dark bg-light border-0 rounded-lg mb-2">
 
-                <div class="card-body p-1">
-                    <div class="d-flex ">
-                        <div class="p-2  w-15">
-                            <img src="{{URL::asset('images/books/1.jpg')}}" class="w-100 rounded-lg" alt="">
-                        </div>
-                        <div class="d-flex flex-column flex-fill  justify-content-between  ">
-                            <div class="p-2 ">
-                                <div class="d-flex  ">
-                                    <div class="p-2 flex-fill ">
-                                        <p>ملت عشق</p>
+                    <div class="card-body p-1">
+                        <div class="d-flex ">
+                            <div class="p-2  w-15">
+                                    @if ($currently_reading[0]->image_src)
+                                    <img src="{{URL::asset($currently_reading[0]->image_src)}}" class="w-100 rounded-lg" alt="">
+                                    @else
+                                    <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                                        class="w-100 rounded-lg" alt="">
+                                    @endif
+                            </div>
+                            <div class="d-flex flex-column flex-fill  justify-content-between  ">
+                                <div class="p-2 ">
+                                    <div class="d-flex  ">
+                                        <div class="p-2 flex-fill ">
+                                        <p>{{$currently_reading[0]->title}}</p>
+                                        </div>
+                                        <div class="p-2 flex-fill ">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
                                     </div>
-                                    <div class="p-2 flex-fill ">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
                                 </div>
-                            </div>
-                            <div class="p-2 ">
-                                <p class="text-left text-muted mb-0">۸۰۳ صفحه</p>
-                                <div class="progress bg-white">
+                                <div class="p-2 ">
+                                    <p class="text-left text-muted mb-0">{{$currently_reading[0]->number_of_pages . 'صفحه'}}</p>
+                                    @if (!is_null($currently_reading_shelf[0]->progress))
+                                    <div class="progress bg-white">
+    
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>                                        
+                                    @endif
 
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="d-flex ">
+                                    <div class="p-2 flex-fill ">
+                                        <p>۵۹ نقد دارد</p>
+                                    </div>
+                                    <div class="p-2 ">به روز رسانی مطالعه</div>
+    
+                                    <div class="p-2 ">به روز رسانی مطالعه</div>
                                 </div>
                             </div>
-                            <div class="d-flex ">
-                                <div class="p-2 flex-fill ">
-                                    <p>۵۹ نقد دارد</p>
-                                </div>
-                                <div class="p-2 ">به روز رسانی مطالعه</div>
-
-                                <div class="p-2 ">به روز رسانی مطالعه</div>
-                            </div>
+    
                         </div>
-
                     </div>
                 </div>
-            </div>
-            @endforeach
-
             <hr>
             @endif
 

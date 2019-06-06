@@ -28,10 +28,11 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         // Get the books that user is currently reading:
-        $currently_reading = BookShelf::where('user_id', $user->id)->where('shelf', 1)->orderBy('created_at', 'desc')->take(1)->get();
+        $currently_reading_shelf = BookShelf::where('user_id', $user->id)->where('shelf', 1)->orderBy('created_at', 'desc')->take(1)->get();
 
+        $currently_reading = Book::find($currently_reading_shelf[0]->book_id);
         // Co-readers:
-        if(count($currently_reading)) {
+        if(count((array)$currently_reading)) {
             $coreaders = BookShelf::where('book_id', $currently_reading[0]->book_id)->where('shelf', 1)->pluck('user_id')->all();
         }
         else {
@@ -42,6 +43,6 @@ class HomeController extends Controller
         // Random books:
         $random_books = Book::inRandomOrder()->take(5)->get();
 
-        return view('index', compact('user', 'currently_reading', 'random_books', 'coreaders'));
+        return view('index', compact('user', 'currently_reading', 'random_books', 'coreaders', 'currently_reading_shelf'));
     }
 }
