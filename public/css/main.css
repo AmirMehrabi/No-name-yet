@@ -13,7 +13,8 @@ a:hover {
 }
 
 a {
-    color: #c1aa78;
+		/* color: #c1aa78; */
+		color: #927330;
     text-decoration: none;
     background-color: transparent;
 }
@@ -342,7 +343,8 @@ blockquote {
 }
 
 .text-kioosk {
-	color: #9c8515;
+	/* color: #9c8515; */
+	color: #927330;
 }
 
 
@@ -416,7 +418,8 @@ blockquote {
 }
 
 .text-kioosk {
-	color: #c1aa78;
+	/* color: #c1aa78; */
+	color: #927330;
 }
 
 .btn-kioosk {

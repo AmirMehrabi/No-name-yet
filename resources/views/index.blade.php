@@ -25,7 +25,7 @@
                             @if (!empty($currently_reading->image_src))
                             <img src="{{URL::asset($currently_reading->image_src)}}" class="w-100 rounded-lg" alt="">
                             @else
-                            <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                            <img src="{{asset('images/placeholder-book-cover-default.png')}}"
                                 class="w-100 rounded-lg" alt="">
                             @endif
                         </div>
@@ -137,7 +137,7 @@
                     @if ($random_book->image_src)
                     <img src="{{URL::asset($random_book->image_src)}}" class="book-of-week-thumbnail rounded-lg" alt="">
                     @else
-                    <img src="https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
+                    <img src="{{asset('images/placeholder-book-cover-default.png')}}"
                         class="book-of-week-thumbnail rounded-lg" alt="">
                     @endif
                     <a href="{{route('book.show', $random_book->id)}}">{{$random_book->title}}</a>
