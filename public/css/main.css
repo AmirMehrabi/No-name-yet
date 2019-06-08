@@ -1,4 +1,6 @@
-@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+@import url(fontiran.css);
+
+/* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
 body {
 	font-family: IRANSans !important;
 	font-weight: 300;
@@ -8,17 +10,25 @@ body {
 }
 
 a:hover {
-    color: #b3975a;
-    text-decoration: none;
+	color: #b3975a;
+	text-decoration: none;
 }
 
 a {
-		/* color: #c1aa78; */
-		color: #927330;
-    text-decoration: none;
-    background-color: transparent;
+	/* color: #c1aa78; */
+	color: #927330;
+	text-decoration: none;
+	background-color: transparent;
 }
-h1, h2, h3, h4, h5, h6,input, textarea {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea {
 	font-family: IRANSans !important;
 	direction: rtl;
 	text-align: right;
@@ -29,55 +39,72 @@ p {
 	direction: rtl;
 	text-align: right;
 }
+
 h1 {
 	font-weight: bold;
 }
+
 .wrapper {
 	max-width: 900px;
 	margin: 0 auto;
 }
+
 .ltr {
 	direction: ltr;
 }
+
 .text-right {
 	text-align: right;
 }
+
 .text-center {
 	text-align: center;
 }
+
 .text-left {
 	text-align: left;
 }
+
 .text-small {
 	font-size: 0.8em;
 }
+
 .text-xsmall {
 	font-size: 0.6em;
 }
+
 .text-large {
 	font-size: 1.2em;
 }
+
 .text-xlarge {
 	font-size: 1.4em;
 }
+
 .text-underline {
-	text-decoration:underline;
+	text-decoration: underline;
 }
+
 .text-ultralight {
 	font-weight: 200;
 }
+
 .text-light {
 	font-weight: 300;
 }
+
 .text-regular {
 	font-weight: normal;
 }
+
 .text-medium {
 	font-weight: 500;
 }
+
 .text-bold {
 	font-weight: bold;
 }
+
 blockquote {
 	font-weight: 500;
 	padding: 10px;
@@ -127,23 +154,25 @@ blockquote {
 .farsiparagraph {
 	font-size: 1em;
 	width: 47%;
-	float:right;
+	float: right;
 	padding-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 
 }
+
 .englishparagraph {
 	font-size: 1em;
 	width: 47%;
 	float: left;
-	direction:ltr;
+	direction: ltr;
 	padding-left: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 
 
 }
+
 .rightbox {
 	width: 60%;
 	padding-right: 20px;
@@ -170,7 +199,7 @@ blockquote {
 
 
 .lefttbox {
-	
+
 	padding-right: 20px;
 	padding-left: 4px;
 	float: right;
@@ -192,11 +221,11 @@ blockquote {
 }
 
 .rtl {
-    direction: rtl;
+	direction: rtl;
 }
 
 .ltr {
-    direction: ltr;
+	direction: ltr;
 }
 
 .alphabet2 {
@@ -209,6 +238,7 @@ blockquote {
 	color: #333333;
 	margin-top: 100px;
 }
+
 .footer {
 	font-weight: 300;
 	font-size: 0.7em;
@@ -219,8 +249,10 @@ blockquote {
 }
 
 
-.fa, .far, .fas {
-    vertical-align: sub;
+.fa,
+.far,
+.fas {
+	vertical-align: sub;
 }
 
 
@@ -231,12 +263,15 @@ blockquote {
 }
 
 .img-navbar {
-    width: 27px;
-    vertical-align: text-bottom;
+	width: 27px;
+	vertical-align: text-bottom;
 }
 
-.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
-    background: #272a2d82;
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link {
+	background: #272a2d82;
 }
 
 .navbar-collapse {
@@ -244,10 +279,10 @@ blockquote {
 }
 
 @media (min-width: 576px) {
-    .navbar-expand-sm .navbar-nav .nav-link {
-        padding-right: .75rem;
-        padding-left: .75rem;
-    }
+	.navbar-expand-sm .navbar-nav .nav-link {
+		padding-right: .75rem;
+		padding-left: .75rem;
+	}
 }
 
 
@@ -263,39 +298,39 @@ blockquote {
 
 .content-section {
 	min-height: 2000px;
-  }
-  
-  .sidebar-section {
+}
+
+.sidebar-section {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-  }
-  
-  .sidebar-item {
+}
+
+.sidebar-item {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	/* Position the items */
-  }
-  
-  .make-me-sticky {
+}
+
+.make-me-sticky {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 60px;
-  }
-  
+}
+
 /* End of sticky sidebar */
 
 
 .bg-light {
-    background-color: #ececec!important;
+	background-color: #ececec !important;
 }
 
 
 .rounded-lg {
-    border-radius: .75rem!important;
+	border-radius: .75rem !important;
 }
 
 .w-20 {
@@ -320,6 +355,7 @@ blockquote {
 .w-90 {
 	width: 90% !IMPORTANT;
 }
+
 .w-85 {
 	width: 85% !IMPORTANT;
 }
@@ -351,32 +387,32 @@ blockquote {
 
 .br-theme-bars-reversed .br-widget a {
 	background-color: pink;
-  }
-  
-  .br-theme-bars-reversed .br-widget a.br-active,
-  .br-theme-bars-reversed .br-widget a.br-selected {
-	background-color: #ff446a;
-  }
-  
-  .br-theme-bars-reversed .br-widget .br-current-rating {
-	color: #ff446a;
-	font-size: 20px;  
-  }
+}
 
-  .src-image {
+.br-theme-bars-reversed .br-widget a.br-active,
+.br-theme-bars-reversed .br-widget a.br-selected {
+	background-color: #ff446a;
+}
+
+.br-theme-bars-reversed .br-widget .br-current-rating {
+	color: #ff446a;
+	font-size: 20px;
+}
+
+.src-image {
 	display: none;
-  }
-  
-  .writer-card {
+}
+
+.writer-card {
 	overflow: hidden;
 	position: relative;
 	border-radius: 8px;
 	text-align: center;
 	padding: 0;
 	background-color: #ececec;
-  }
-  
-  .writer-card .header-bg {
+}
+
+.writer-card .header-bg {
 	/* This stretches the canvas across the entire hero unit */
 	position: absolute;
 	top: 0;
@@ -387,27 +423,28 @@ blockquote {
 	/* This positions the canvas under the text */
 	z-index: 1;
 	background: #fff;
-  }
-  .writer-card .avatar {
+}
+
+.writer-card .avatar {
 	position: relative;
 	margin-top: 20px;
 	z-index: 100;
-  }
-  
-  .writer-card .avatar img {
+}
+
+.writer-card .avatar img {
 	width: 80px;
 	height: 80px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 	border: 4px solid #fff;
-  }
-  
+}
 
-  .btn-kioosk {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+
+.btn-kioosk {
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
 }
 
 
@@ -423,24 +460,24 @@ blockquote {
 }
 
 .btn-kioosk {
-    color: #fff;
-    background-color: #c1aa78;
-    border-color: #c1aa78;
+	color: #fff;
+	background-color: #c1aa78;
+	border-color: #c1aa78;
 }
 
 .btn-kioosk:hover {
-    color: #fff;
-    background-color: #b3975a;
-    border-color: #b3975a;
+	color: #fff;
+	background-color: #b3975a;
+	border-color: #b3975a;
 }
 
 .btn-outline-kioosk {
-    color: #c1aa78;
-    border-color: #c1aa78;
+	color: #c1aa78;
+	border-color: #c1aa78;
 }
 
-.btn-outline-kioosk:hover{
-    color: #fff;
-    background-color: #b3975a;
-    border-color: #b3975a;
+.btn-outline-kioosk:hover {
+	color: #fff;
+	background-color: #b3975a;
+	border-color: #b3975a;
 }
