@@ -15,7 +15,6 @@
     <div class="row">
         <div class="col-9">
             @if (!empty($currently_reading))
-
             <h1 class="h5">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
             <div class="card text-dark bg-light border-0 rounded-lg mb-2">
 
@@ -25,8 +24,8 @@
                             @if (!empty($currently_reading->image_src))
                             <img src="{{URL::asset($currently_reading->image_src)}}" class="w-100 rounded-lg" alt="">
                             @else
-                            <img src="{{asset('images/placeholder-book-cover-default.png')}}"
-                                class="w-100 rounded-lg" alt="">
+                            <img src="{{asset('images/placeholder-book-cover-default.png')}}" class="w-100 rounded-lg"
+                                alt="">
                             @endif
                         </div>
                         <div class="d-flex flex-column flex-fill  justify-content-between  ">
@@ -51,12 +50,12 @@
                                 @else
                                 <p class="text-left text-muted mb-0">مقدار خوانده شده: نامشخص
 
-                                <div class="progress bg-white">
+                                    <div class="progress bg-white">
 
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%"
-                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"></div>
-                                </div>
-                                @endif
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%"
+                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"></div>
+                                    </div>
+                                    @endif
 
                             </div>
                             <div class="d-flex ">
