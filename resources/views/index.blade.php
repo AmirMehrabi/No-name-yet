@@ -49,7 +49,6 @@
                                 </div>
                                 @else
                                 <p class="text-left text-muted mb-0">مقدار خوانده شده: نامشخص
-
                                     <div class="progress bg-white">
 
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 0%"
