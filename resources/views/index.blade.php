@@ -56,7 +56,6 @@
                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"></div>
                                     </div>
                                     @endif
-
                             </div>
                             <div class="d-flex ">
                                 <div class="p-2 flex-fill ">
