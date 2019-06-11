@@ -28,18 +28,11 @@
               <li class="nav-item">
                 <a class="nav-link mx-3" href="#">انتخابات شما</a>
               </li>
-
-              
-
             @endif
             
-
-
           </ul>
-
         </div>
       </nav>
-
     </div>
   </div>
 </div>
