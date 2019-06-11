@@ -30,8 +30,9 @@
                 <div class="col-12">
                         <ul class="nav nav-pills mb-3 rtl mt-2 border-bottom pr-0 pb-2" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                        <a class="nav-link nav-link-profile   active" id="pills-home-tab" data-toggle="pill"
-                                                href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">مطالعه
+                                        <a class="nav-link nav-link-profile   active" id="pills-home-tab"
+                                                data-toggle="pill" href="#pills-home" role="tab"
+                                                aria-controls="pills-home" aria-selected="true">مطالعه
                                                 کرده</a>
                                 </li>
                                 <li class="nav-item">
@@ -75,25 +76,26 @@
 
 
                         <div class="d-flex flex-row mb-3 rtl border-bottom text-muted">
-                                <div class="p-2 flex-fill text-right"><i class="fas fa-star"></i> ۳۲۰ امتیاز داده شده</div>
+                                <div class="p-2 flex-fill text-right"><i class="fas fa-star"></i> ۳۲۰ امتیاز داده شده
+                                </div>
                                 <div class="p-2 flex-fill text-left"><a href="#" class="text-muted">دیدن همه</a>
                                 </div>
                         </div>
 
                         <div class="d-flex flex-row mb-3">
                                 <div class="p-1 m-1 flex-fill ">
-                                        <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}" class="book-sidebar-thumbnail"
-                                                alt="">
+                                        <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
 
                                 </div>
                                 <div class="p-1 m-1 flex-fill ">
-                                        <img src="{{ URL::asset('images/books/-1549109737book.jpg') }}" class="book-sidebar-thumbnail"
-                                                alt="">
+                                        <img src="{{ URL::asset('images/books/-1549109737book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
 
                                 </div>
                                 <div class="p-1 m-1 flex-fill ">
-                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}" class="book-sidebar-thumbnail"
-                                                alt="">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
 
                                 </div>
 
@@ -104,15 +106,16 @@
 
                         {{-- نقد نوشته شده --}}
                         <div class="d-flex flex-row  mb-3 rtl border-bottom text-muted">
-                                <div class="p-2 flex-fill text-right"><i class="fas fa-comments"></i> ۴۱ نقد نوشته شده</div>
+                                <div class="p-2 flex-fill text-right"><i class="fas fa-comments"></i> ۴۱ نقد نوشته شده
+                                </div>
                                 <div class="p-2 flex-fill text-left"><a href="#" class="text-muted">دیدن همه</a>
                                 </div>
                         </div>
 
                         <div class="d-flex flex-row mb-3 rtl  align-items-center profile-sidebar-review">
                                 <div class=" d-flex p-2 bd-highlight w-25">
-                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}" class=" book-sidebar-review-thumbnail  "
-                                                alt="">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class=" book-sidebar-review-thumbnail  " alt="">
                                 </div>
                                 <div class="d-flex flex-fill w-75  flex-column bd-highlight mb-3 text-right">
                                         <div class=" flex-grow-1 bd-highlight">
@@ -125,8 +128,8 @@
 
                         <div class="d-flex flex-row mb-3 rtl  align-items-center">
                                 <div class=" d-flex p-2 bd-highlight w-25">
-                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}" class=" book-sidebar-review-thumbnail  "
-                                                alt="">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class=" book-sidebar-review-thumbnail  " alt="">
                                 </div>
                                 <div class="d-flex flex-fill w-75  flex-column bd-highlight mb-3 text-right">
                                         <div class=" flex-grow-1 bd-highlight">
@@ -147,7 +150,8 @@
 
                 <div class="col-8">
                         <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
                                         {{-- مطالعه کرده --}}
 
                                         <div class="d-flex flex-row mb-3">
@@ -197,8 +201,10 @@
 
                                         {{-- مطالعه کرده --}}
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">...</div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">...</div>
                         </div>
                 </div>
         </div>
