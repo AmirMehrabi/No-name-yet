@@ -16,7 +16,6 @@
               <li class="nav-item">
                   <a class="nav-link" href="#">کاربران</a>
               </li>
-
           </ul>
           <form class="mx-2 my-auto d-inline w-100">
               <input type="text" class="form-control border border-right-0" placeholder="جست و جو ...">
