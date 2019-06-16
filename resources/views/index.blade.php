@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'پروفایل کاربری')
+@section('title', 'صفحه‌ی نخست')
 
 
 @section('header-assets')
@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-9">
-            @if (!empty($currently_reading))
+            @if ($currently_reading)
             <h1 class="h5">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
             <div class="card text-dark bg-light border-0 rounded-lg mb-2">
 
@@ -31,8 +31,8 @@
                         <div class="d-flex flex-column flex-fill  justify-content-between  ">
                             <div class="p-2 ">
                                 <div class="d-flex  ">
-                                    <div class="p-2 flex-fill ">
-                                        <p>{{$currently_reading->title}}</p>
+                                    <div class="p-2 flex-fill text-right">
+                                        <a href="{{route('book.show', $currently_reading->id)}}" class="h5">{{$currently_reading->title}}</a>
                                     </div>
                                     <div class="p-2 flex-fill ">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
                                 </div>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="d-flex ">
                                 <div class="p-2 flex-fill ">
-                                    <p>۵۹ نقد دارد</p>
+                                    <p>{{$currently_reading->reviews->count()}} نقد دارد</p>
                                 </div>
                                 <div class="p-2 ">به روز رسانی مطالعه</div>
 
@@ -137,7 +137,7 @@
                     <img src="{{asset('images/placeholder-book-cover-default.png')}}"
                         class="book-of-week-thumbnail rounded-lg" alt="">
                     @endif
-                    <a href="{{route('book.show', $random_book->id)}}">{{$random_book->title}}</a>
+                    <a href="{{route('book.show', $random_book->id)}}" class="text-kioosk font-weight-bold">{{$random_book->title}}</a>
                     <p class="">{{$random_book->author}}</p>
                 </div>
                 @endforeach
