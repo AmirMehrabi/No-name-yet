@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 
-
+@section('title', 'صفحه‌ی کتاب ' . $book->title)
+    
 
 
 @section('header-assets')
