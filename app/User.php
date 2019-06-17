@@ -35,5 +35,9 @@ class User extends Authenticatable
         return $this->hasMany('App\BookShelf');
     }
 
-    
+    public function books()
+    {
+        return $this->belongsToMany(Book::class, 'book_shelves');
+    }
+
 }

@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="p-2 ">
-                                @if (!empty($currently_reading_shelf->progress))
+                                @if (!empty($currently_reading->bookShelf->progress))
                                 <p class="text-left text-muted mb-0">{{$currently_reading->number_of_pages . 'صفحه'}}
                                 </p>
 

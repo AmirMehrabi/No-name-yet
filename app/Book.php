@@ -21,6 +21,11 @@ class Book extends Model
     {
       return $this->hasMany(BookShelf::class);
     }
+
+    public function readers()
+    {
+      return $this->belongsToMany(user::class, 'book_shelves');
+    }
     
 
     public function getAverageRateAttribute(){
