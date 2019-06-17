@@ -86,27 +86,27 @@
             </div>
 
             <div class="d-flex ">
-                <div class="p-2 flex-fill w-20">
+                <div class="p-0 p-sm-1 p-md-2 flex-fill w-20">
                     <img src="{{URL::asset('images/books/1.jpg')}}" class="book-of-week-thumbnail rounded-lg" alt="">
                     <p class="text-kioosk font-weight-bold mb-0">زندگان</p>
                     <p class="">الیف شافاک</p>
                 </div>
-                <div class="p-2 flex-fill w-20">
+                <div class="p-0 p-sm-1 p-md-2 flex-fill w-20">
                     <img src="images/books/2.jpg" class="book-of-week-thumbnail rounded-lg" alt="">
                     <p class="text-kioosk font-weight-bold mb-0">خاطراتی که نگه می‌داریم</p>
                     <p class="">الیف شافاک</p>
                 </div>
-                <div class="p-2 flex-fill w-20">
+                <div class="p-0 p-sm-1 p-md-2 flex-fill w-20">
                     <img src="images/books/3.jpg" class="book-of-week-thumbnail rounded-lg" alt="">
                     <p class="text-kioosk font-weight-bold mb-0">حاصل عمر</p>
                     <p class="">الیف شافاک</p>
                 </div>
-                <div class="p-2 flex-fill w-20">
+                <div class="p-0 p-sm-1 p-md-2 flex-fill w-20">
                     <img src="images/books/4.jpg" class="book-of-week-thumbnail rounded-lg" alt="">
                     <p class="text-kioosk font-weight-bold mb-0">بی‌شعورهای گردن‌کلفت</p>
                     <p class="">الیف شافاک</p>
                 </div>
-                <div class="p-2 flex-fill w-20">
+                <div class="p-0 p-sm-1 p-md-2 flex-fill w-20">
                     <img src="images/books/5.jpg" class="book-of-week-thumbnail rounded-lg" alt="">
                     <p class="text-kioosk font-weight-bold mb-0">جان شیفته</p>
                     <p class="">الیف شافاک</p>

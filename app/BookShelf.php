@@ -15,6 +15,8 @@ class BookShelf extends Model
 
     public function book()
     {
-        return $this->belongsTo('App\Book', 'book_id');
+        return $this->hasOne('App\Book')->withDefault(function () {
+            return new Book();
+        });;
     }
 }

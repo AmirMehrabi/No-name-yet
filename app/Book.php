@@ -21,6 +21,7 @@ class Book extends Model
     {
       return $this->hasMany(BookShelf::class);
     }
+    
 
     public function getAverageRateAttribute(){
       return round($this->bookShelf()->avg('rate'), 1);
