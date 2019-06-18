@@ -23,10 +23,10 @@ class PagesController extends Controller
         $user = Auth::user();
         $read = $user->books()->where('shelf', 1)->get();
         $reading = $user->books()->where('shelf', 2)->get();
-        $wantToRead = $user->books()->where('shelf', 3)->get();
+        $want_to_read = $user->books()->where('shelf', 3)->get();
 
-        
-        return view('profile.show', compact('user', 'read', 'wantToRead', 'reading'));
+   
+        return view('profile.show', compact('user', 'read', 'want_to_read', 'reading'));
     }
 
     public function writer() {
