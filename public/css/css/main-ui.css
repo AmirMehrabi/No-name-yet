@@ -1,0 +1,443 @@
+@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+body {
+	font-family: IRANSans !important;
+	font-weight: 300;
+	direction: rtl;
+	/* background-color: #E2E2E2; */
+	margin: 0;
+}
+
+a:hover {
+    color: #b3975a;
+    text-decoration: none;
+}
+
+a {
+    color: #c1aa78;
+    text-decoration: none;
+    background-color: transparent;
+}
+h1, h2, h3, h4, h5, h6,input, textarea {
+	font-family: IRANSans !important;
+	direction: rtl;
+	text-align: right;
+}
+
+p {
+	font-family: IRANSans !important;
+	direction: rtl;
+	text-align: right;
+}
+h1 {
+	font-weight: bold;
+}
+.wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+}
+.ltr {
+	direction: ltr;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-small {
+	font-size: 0.8em;
+}
+.text-xsmall {
+	font-size: 0.6em;
+}
+.text-large {
+	font-size: 1.2em;
+}
+.text-xlarge {
+	font-size: 1.4em;
+}
+.text-underline {
+	text-decoration:underline;
+}
+.text-ultralight {
+	font-weight: 200;
+}
+.text-light {
+	font-weight: 300;
+}
+.text-regular {
+	font-weight: normal;
+}
+.text-medium {
+	font-weight: 500;
+}
+.text-bold {
+	font-weight: bold;
+}
+blockquote {
+	font-weight: 500;
+	padding: 10px;
+	border: 1px dashed #666666;
+}
+
+.mainbox {
+	width: 100%;
+	background-color: #EFEFEF;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #FFFF33;
+}
+
+.mainboxnegativ {
+	width: 100%;
+	background-color: #000000;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #FFFF33;
+	color: #F9F9F9;
+}
+
+.mainbox2 {
+	font-size: 1em;
+	width: 90%;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mainbox3 {
+	width: 100%;
+	background-color: #b8b8b8;
+	display: table;
+	margin-bottom: 30px;
+	border-right: 8px solid #bd70ff;
+}
+
+.mainbox2negativ {
+	font-size: 1em;
+	color: #F9F9F9;
+	background-color: #000000;
+	padding-right: 20px;
+}
+
+.farsiparagraph {
+	font-size: 1em;
+	width: 47%;
+	float:right;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+.englishparagraph {
+	font-size: 1em;
+	width: 47%;
+	float: left;
+	direction:ltr;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+
+}
+.rightbox {
+	width: 60%;
+	padding-right: 20px;
+	padding-left: 5px;
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	min-width: 0px;
+	background-color: #F7F7F7;
+
+}
+
+.titelbox {
+	width: 60%;
+	padding-right: 25px;
+	padding-left: 0px;
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	min-width: 0px;
+	background-color: #F2F2F2;
+	color: #4B4B4B;
+}
+
+
+.lefttbox {
+	
+	padding-right: 20px;
+	padding-left: 4px;
+	float: right;
+	margin-bottom: 10px;
+	min-width: 0px;
+}
+
+.alphabet {
+	width: 35%;
+	float: left;
+	font-size: 21em;
+	text-align: center;
+	font-weight: 500;
+	color: #999999;
+}
+
+.IRANSans {
+	font-family: IRANSans !important;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.alphabet2 {
+	width: 35%;
+	float: left;
+	direction: ltr;
+	font-size: 1.6em;
+	text-align: left;
+	font-weight: 500;
+	color: #333333;
+	margin-top: 100px;
+}
+.footer {
+	font-weight: 300;
+	font-size: 0.7em;
+	text-align: center;
+	direction: ltr;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+
+.fa, .far, .fas {
+    vertical-align: sub;
+}
+
+
+
+/* Navbar styles */
+.navbar {
+	padding: 0.1rem 1rem !IMPORTANT;
+}
+
+.img-navbar {
+    width: 27px;
+    vertical-align: text-bottom;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    background: #272a2d82;
+}
+
+.navbar-collapse {
+	text-align: right;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: .75rem;
+        padding-left: .75rem;
+    }
+}
+
+
+
+/* End of navbar styles */
+
+
+
+
+
+/* Sticky Sidebar */
+
+
+.content-section {
+	min-height: 2000px;
+  }
+  
+  .sidebar-section {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+  }
+  
+  .sidebar-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Position the items */
+  }
+  
+  .make-me-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 60px;
+  }
+  
+/* End of sticky sidebar */
+
+
+.bg-light {
+    background-color: #ececec!important;
+}
+
+
+.rounded-lg {
+    border-radius: .75rem!important;
+}
+
+.w-20 {
+	width: 20% !IMPORTANT;
+}
+
+.w-30 {
+	width: 30% !IMPORTANT;
+}
+
+
+.w-15 {
+	width: 15% !IMPORTANT;
+}
+
+
+.w-10 {
+	width: 10% !IMPORTANT;
+}
+
+
+.w-90 {
+	width: 90% !IMPORTANT;
+}
+.w-85 {
+	width: 85% !IMPORTANT;
+}
+
+.book-of-week-thumbnail {
+	width: 100%;
+	max-height: 200px;
+	object-fit: cover;
+}
+
+
+.writers-thumbnail {
+	width: 100%;
+	max-height: 250px;
+	object-fit: cover;
+}
+
+.writer-thumbnail {
+	max-height: 65px;
+	object-fit: cover;
+}
+
+.text-kioosk {
+	color: #9c8515;
+}
+
+
+
+.br-theme-bars-reversed .br-widget a {
+	background-color: pink;
+  }
+  
+  .br-theme-bars-reversed .br-widget a.br-active,
+  .br-theme-bars-reversed .br-widget a.br-selected {
+	background-color: #ff446a;
+  }
+  
+  .br-theme-bars-reversed .br-widget .br-current-rating {
+	color: #ff446a;
+	font-size: 20px;  
+  }
+
+  .src-image {
+	display: none;
+  }
+  
+  .writer-card {
+	overflow: hidden;
+	position: relative;
+	border-radius: 8px;
+	text-align: center;
+	padding: 0;
+	background-color: #ececec;
+  }
+  
+  .writer-card .header-bg {
+	/* This stretches the canvas across the entire hero unit */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px #FFF solid;
+	/* This positions the canvas under the text */
+	z-index: 1;
+	background: #fff;
+  }
+  .writer-card .avatar {
+	position: relative;
+	margin-top: 20px;
+	z-index: 100;
+  }
+  
+  .writer-card .avatar img {
+	width: 80px;
+	height: 80px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 4px solid #fff;
+  }
+  
+
+  .btn-kioosk {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+/* Colors */
+
+.bg-kioosk {
+	background: #c1aa78;
+}
+
+.text-kioosk {
+	color: #c1aa78;
+}
+
+.btn-kioosk {
+    color: #fff;
+    background-color: #c1aa78;
+    border-color: #c1aa78;
+}
+
+.btn-kioosk:hover {
+    color: #fff;
+    background-color: #b3975a;
+    border-color: #b3975a;
+}
+
+.btn-outline-kioosk {
+    color: #c1aa78;
+    border-color: #c1aa78;
+}
+
+.btn-outline-kioosk:hover{
+    color: #fff;
+    background-color: #b3975a;
+    border-color: #b3975a;
+}

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}" >
     <link rel="stylesheet" href="{{URL::asset('css/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/css/main-ui.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script>
         // rename myToken as you like
@@ -33,8 +34,8 @@
 
     <div id="app">
       <flash-component message="{{ session('flash') }}"></flash-component>
-      @yield('content')
     </div>
+    @yield('content')
 
 
 
@@ -43,9 +44,9 @@
       @yield('footer')
 
 
-    <script src="{{URL::asset('js/jquery.min.js')}}" ></script>
-    <script src="{{URL::asset('js/popper.min.js')}}"  ></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}" ></script>
+    <script src="{{asset('js/jquery.min.js')}}" ></script>
+    <script src="{{asset('js/popper.min.js')}}"  ></script>
+    <script src="{{asset('js/bootstrap.min.js')}}" ></script>
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('footer-assets')

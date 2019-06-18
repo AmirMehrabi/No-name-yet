@@ -7,6 +7,7 @@ use Goutte\Client;
 use App\Book;
 use App\BookShelf;
 use App\Review;
+use Auth;
 use App\Notifications\ReviewWasUpdated;
 use Response;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -19,7 +20,8 @@ class PagesController extends Controller
     }
 
     public function profile() {
-        return view('profile.index');
+        $user = Auth::user();
+        return view('profile.show', compact('user'));
     }
 
     public function search() {
