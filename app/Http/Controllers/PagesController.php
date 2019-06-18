@@ -21,7 +21,22 @@ class PagesController extends Controller
 
     public function profile() {
         $user = Auth::user();
-        return view('profile.show', compact('user'));
+        $read = $user->books()->where('shelf', 1)->get();
+        $reading = $user->books()->where('shelf', 2)->get();
+        $wantToRead = $user->books()->where('shelf', 3)->get();
+
+        
+        return view('profile.show', compact('user', 'read', 'wantToRead', 'reading'));
+    }
+
+    public function writer() {
+        $user = Auth::user();
+        return view('writer.show', compact('user'));
+    }
+
+    public function publisher() {
+        $user = Auth::user();
+        return view('publisher.show', compact('user'));
     }
 
     public function search() {

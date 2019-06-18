@@ -10,31 +10,19 @@
 @section('content')
 @include('partial.main-nav')
 
-<section id="profile-header" class="p-5 bg-primary rtl">
-        <div class="container">
-                <div class="d-flex flex-row mb-3">
-                        <div class="p-2 w-15">
-                                <img src="images/profiles/amirmehrabi.jpg" class="profile-avatar rounded-circle w-100" alt="">
-                        </div>
-                        <div class="m-1 p-1 text-right align-self-center">
-                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">{{$user->name}}</p> <br>
-                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">amirmehrabian</p>
-                        </div>
-                </div>
-        </div>
 
-</section>
 <div class="container mt-5">
 
         <div class="row">
-            <div class="col-9">
+            <div class="col-xs-12 col-sm-6 col-md-9">
 
-                <!-- End of Book progress bar -->
 
-                <!-- Start of Best books of the week -->
+
+                
+
                 <div class="d-flex flex-row  mb-3">
                     <div class="p-2 ">
-                        <h1 class="h5">کتاب‌های منتشر شده از این نویسنده</h1>
+                        <h1 class="h5">کتاب‌های منتشر شده از این ناشر</h1>
                     </div>
                     <div class="p-2 flex-fill">
                         <div class="dropdown open">
@@ -100,17 +88,17 @@
                 <!-- End of section for timeline -->
 
             </div>
-            <div class="col-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
 
                 <!-- Sidebar -->
 
-                <div class="sidebar-item">
+                <div class="sidebar-item m-1 m-sm-0">
                     <div class="card text-dark bg-light border-0 rounded-lg">
 
                         <div class="card-body p-3 text-center">
                             <img src="images/books/1.jpg" class="w-25 rounded-circle writer-thumbnail" alt="">
-                            <p class="h6 m-1">احمد شاملو</p>
-                            <p class="text-muted">کرمان، ایران</p>
+                            <p class="h6 mb-0">انتشارات ققنوس</p>
+                            <p class="text-muted">تهران ایران</p>
 
                             <a href="#" class="btn btn-kioosk btn-block">دنبال کردن</a>
 

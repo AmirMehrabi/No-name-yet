@@ -10,28 +10,24 @@
 @section('content')
 @include('partial.main-nav')
 
-<section id="profile-header" class="p-5 bg-primary rtl">
-        <div class="container">
-                <div class="d-flex flex-row mb-3">
-                        <div class="p-2 w-15">
-                                <img src="images/profiles/amirmehrabi.jpg" class="profile-avatar rounded-circle w-100" alt="">
-                        </div>
-                        <div class="m-1 p-1 text-right align-self-center">
-                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">{{$user->name}}</p> <br>
-                                <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">amirmehrabian</p>
-                        </div>
-                </div>
-        </div>
 
-</section>
 <div class="container mt-5">
 
         <div class="row">
-            <div class="col-9">
+            <div class="col-xs-12 col-sm-6 col-md-9">
 
-                <!-- End of Book progress bar -->
 
-                <!-- Start of Best books of the week -->
+                <div class="d-flex flex-row  mb-3">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <h4 class="card-title">درباره‌ی احمد شاملو</h4>
+                        <p class="card-text">احمد شاملو (۲۱ آذر ۱۳۰۴–۲ مرداد ۱۳۷۹) متخلص به الف. بامداد یا الف. صبح، شاعر، نویسنده، روزنامه‌نگار، پژوهشگر، مترجم، فرهنگ‌نویس و از دبیران کانون نویسندگان ایران پیش و پس از انقلاب ۱۳۵۷ بود.[۳][۴] شاملو تحصیلات کلاسیک نامرتبی داشت؛ زیرا پدرش افسر ارتش بود و پیوسته از این شهر به آن شهر اعزام می‌شد و از همین روی، خانواده اش هرگز نتوانستند برای مدتی طولانی جایی ماندگار شوند. زندانی شدنش در سال ۱۳۲۲ به سبب فعالیت‌های سیاسی، پایانِ همان تحصیلات نامرتب را رقم می‌زند.</p>
+                        <p class="card-text">شهرت اصلی شاملو به خاطر نوآوری در شعر معاصر فارسی و سرودن گونه‌ای شعر است که با نام شعر سپید یا شعر شاملویی که هم‌اکنون یکی از مهم‌ترین قالب‌های شعری مورد استفاده ایران به‌شمار می‌رود و تقلیدی است از شعر سپید فرانسوی[۵] یا شعر منثور شناخته می‌شود. شاملو که هر شاعر آرمانگرا را در نهایت امر یک آنارشیست تام و تمام می‌انگاشت،[۶] در سال ۱۳۲۵ با نیما یوشیج ملاقات کرد و تحت تأثیر او به شعر نیمایی روی آورد؛ اما نخستین بار در شعر «تا شکوفهٔ سرخ یک پیراهن» که در سال ۱۳۲۹ با نام «شعر سفید غفران» منتشر شد وزن را رها کرد و به صورت پیشرو سبک نویی را در شعر معاصر فارسی شکل داد.[۷] شاملو علاوه بر شعر، فعالیت‌هایی مطبوعاتی، پژوهشی و ترجمه‌هایی شناخته‌شده دارد. مجموعهٔ کتاب کوچه او بزرگ‌ترین اثر پژوهشی در باب فرهنگ عامه مردم ایران می‌باشد.[۸] آثار وی به زبان‌های: سوئدی، انگلیسی، ژاپنی، فرانسوی، اسپانیایی، آلمانی، روسی، ارمنی، هلندی، رومانیایی، فنلاندی، کردی و ترکی∗ ترجمه شده‌اند. شاملو از سال ۱۳۳۱ به مدت دو سال، مشاور فرهنگی سفارت مجارستان بود.</p>
+                    </div>
+                    </div>
+                </div>
+                
+
                 <div class="d-flex flex-row  mb-3">
                     <div class="p-2 ">
                         <h1 class="h5">کتاب‌های منتشر شده از این نویسنده</h1>
@@ -100,11 +96,11 @@
                 <!-- End of section for timeline -->
 
             </div>
-            <div class="col-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
 
                 <!-- Sidebar -->
 
-                <div class="sidebar-item">
+                <div class="sidebar-item m-1 m-sm-0">
                     <div class="card text-dark bg-light border-0 rounded-lg">
 
                         <div class="card-body p-3 text-center">

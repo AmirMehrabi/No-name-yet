@@ -14,7 +14,8 @@
         <div class="container">
                 <div class="d-flex flex-row mb-3">
                         <div class="p-2 w-15">
-                                <img src="images/profiles/amirmehrabi.jpg" class="profile-avatar rounded-circle w-100" alt="">
+                                <img src="images/profiles/amirmehrabi.jpg" class="profile-avatar rounded-circle w-100"
+                                        alt="">
                         </div>
                         <div class="m-1 p-1 text-right align-self-center">
                                 <p class="d-inline-block p-1 m-1 text-dark bg-white rounded">{{$user->name}}</p> <br>
@@ -24,188 +25,204 @@
         </div>
 
 </section>
-<div class="container mt-5">
+
+<div class="container">
+        <div class="row">
+                <div class="col-12">
+                        <ul class="nav nav-pills mb-3 rtl mt-2 border-bottom pr-0 pb-2" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                        <a class="nav-link nav-link-profile   active" id="pills-home-tab"
+                                                data-toggle="pill" href="#pills-home" role="tab"
+                                                aria-controls="pills-home" aria-selected="true">مطالعه
+                                                کرده</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link nav-link-profile" id="pills-profile-tab" data-toggle="pill"
+                                                href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                                aria-selected="false">برای
+                                                مطالعه</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link nav-link-profile" id="pills-contact-tab" data-toggle="pill"
+                                                href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                                aria-selected="false">در حال
+                                                مطالعه</a>
+                                </li>
+                                <li class="nav-item mr-auto">
+                                        <a class=" btn btn-dark bg-daneh border-0" href="#">دنبال کردن</a>
+                                </li>
+                        </ul>
+
+                </div>
+        </div>
 
         <div class="row">
-            <div class="col-9">
-
-                <!-- End of Book progress bar -->
-
-                <!-- Start of Best books of the week -->
-                <div class="d-flex flex-row  mb-3">
-                    <div class="p-2 ">
-                        <h1 class="h5">کتاب‌های منتشر شده از این نویسنده</h1>
-                    </div>
-                    <div class="p-2 flex-fill">
-                        <div class="dropdown open">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                        جدیدترین
-                                    </button>
-                            <div class="dropdown-menu" aria-labelledby="triggerId">
-                                <button class="dropdown-item" href="#">Action</button>
-                                <button class="dropdown-item disabled" href="#">Disabled action</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex ">
-                    <div class="p-2 flex-fill w-25">
-                        <img src="images/books/1.jpg" class="writers-thumbnail rounded-lg" alt="">
-                        <p class="text-kioosk font-weight-bold mb-0">زندگان</p>
-                        <p class="">الیف شافاک</p>
-                    </div>
-                    <div class="p-2 flex-fill w-25">
-                        <img src="images/books/2.jpg" class="writers-thumbnail rounded-lg" alt="">
-                        <p class="text-kioosk font-weight-bold mb-0">خاطراتی که نگه می‌داریم</p>
-                        <p class="">الیف شافاک</p>
-                    </div>
-                    <div class="p-2 flex-fill w-25">
-                        <img src="images/books/3.jpg" class="writers-thumbnail rounded-lg" alt="">
-                        <p class="text-kioosk font-weight-bold mb-0">حاصل عمر</p>
-                        <p class="">الیف شافاک</p>
-                    </div>
-                    <div class="p-2 flex-fill w-25">
-                        <img src="images/books/4.jpg" class="writers-thumbnail rounded-lg" alt="">
-                        <p class="text-kioosk font-weight-bold mb-0">بی‌شعورهای گردن‌کلفت</p>
-                        <p class="">الیف شافاک</p>
-                    </div>
-                </div>
-                <div class="d-flex ">
-                        <div class="p-2 flex-fill w-25">
-                            <img src="images/books/1.jpg" class="writers-thumbnail rounded-lg" alt="">
-                            <p class="text-kioosk font-weight-bold mb-0">زندگان</p>
-                            <p class="">الیف شافاک</p>
-                        </div>
-                        <div class="p-2 flex-fill w-25">
-                            <img src="images/books/2.jpg" class="writers-thumbnail rounded-lg" alt="">
-                            <p class="text-kioosk font-weight-bold mb-0">خاطراتی که نگه می‌داریم</p>
-                            <p class="">الیف شافاک</p>
-                        </div>
-                        <div class="p-2 flex-fill w-25">
-                            <img src="images/books/3.jpg" class="writers-thumbnail rounded-lg" alt="">
-                            <p class="text-kioosk font-weight-bold mb-0">حاصل عمر</p>
-                            <p class="">الیف شافاک</p>
-                        </div>
-                        <div class="p-2 flex-fill w-25">
-                            <img src="images/books/4.jpg" class="writers-thumbnail rounded-lg" alt="">
-                            <p class="text-kioosk font-weight-bold mb-0">بی‌شعورهای گردن‌کلفت</p>
-                            <p class="">الیف شافاک</p>
-                        </div>
-                    </div>
-                <hr>
-
-
-                <!-- End of section for timeline -->
-
-            </div>
-            <div class="col-3">
-
-                <!-- Sidebar -->
-
-                <div class="sidebar-item">
-                    <div class="card text-dark bg-light border-0 rounded-lg">
-
-                        <div class="card-body p-3 text-center">
-                            <img src="images/books/1.jpg" class="w-25 rounded-circle writer-thumbnail" alt="">
-                            <p class="h6 m-1">احمد شاملو</p>
-                            <p class="text-muted">کرمان، ایران</p>
-
-                            <a href="#" class="btn btn-kioosk btn-block">دنبال کردن</a>
-
-                            <div class="d-flex  ">
-                                <div class="pt-2 w-50 ">
-                                    <p class="mb-0 text-right"><i class="fa fa-user-o" aria-hidden="true"></i>
-                                        ۲۷ دنبال کننده</p>
-                                </div>
-                                <div class="pt-2 w-50 ">
-                                    <p class="mb-0 text-left"><i class="fa fa-book" aria-hidden="true"></i>
-                                        ۳ کتاب</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4 mt-1">
-
-                            <a href="#" class="text-muted my-1">www.shamloo.com <i class="fa fa-globe fa-2x" aria-hidden="true"></i></a><br>
-                            <a href="#" class="text-muted my-1">034-3690 <i class="fa fa-phone fa-2x" aria-hidden="true"></i></a> <br>
-
-
-
-                        <hr>
-                        <a href="#" class="btn btn-outline-kioosk">عاشقانه</a>
-                        <a href="#" class="btn btn-outline-kioosk">داستان عاشقانه</a>
-                        <a href="#" class="btn btn-outline-kioosk">علمی</a>
-                    </div>
 
 
 
 
-                    <div class="mb-4 make-me-sticky">
+                <div class="col-8">
+                        <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
+                                        {{-- مطالعه کرده --}}
 
-                        <div class="d-flex flex-row bd-highlight mt-3 mb-2 border-bottom">
-                            <div class=" flex-fill">
-                                <h3 class="h6 text-muted mb-0"><i class="fa fa-user-o"></i> شاید بشناسید </h3>
-                            </div>
-                            <div class=" flex-fill"><a href="#">دیدن همه</a></div>
-                        </div>
+                                        <div class="d-flex flex-row mb-3">
+                                                @foreach ($read as $read_book)
+                                                <div class="p-1 m-1  w-25">
+                                                        <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
+                                                                class="book-thumbnail" alt="">
+                                                        <div class="d-flex flex-row-reverse">
+                                                                <div class="flex-fill color-daneh text-right">نان
+                                                                        و سیاست</div>
+                                                                <div class=" color-daneh text-left">۶۶٪</div>
+                                                        </div>
+                                                        <p class="text-right">فئودور داستایوفسکی</p>
+                                                </div>
+                                                @endforeach
 
-                        <div class="d-flex align-items-center">
-                            <div class="w-25">
-                                <img src="images/books/1.jpg" class="w-100 rounded-lg p-1" alt="">
-                            </div>
-                            <div class="d-flex flex-column flex-fill justify-content-between  ">
-                                <div class="">
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <p class=" mb-2 font-weight-bold">امیرمسعود مهرابیان</p>
+
+                                                <div class="p-1 m-1  w-25">
+                                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                                class="book-thumbnail" alt="">
+                                                        <div class="d-flex flex-row-reverse">
+                                                                <div class="flex-fill color-daneh text-right">قمار
+                                                                        باز</div>
+                                                                <div class=" color-daneh text-left">۶۶٪</div>
+                                                        </div>
+                                                        <p class="text-right">فئودور داستایوفسکی</p>
+                                                </div>
+                                                <div class="p-1 m-1  w-25">
+                                                        <img src="{{ URL::asset('images/books/-1549109757book.jpg') }}"
+                                                                class="book-thumbnail" alt="">
+                                                        <div class="d-flex flex-row-reverse">
+                                                                <div class="flex-fill color-daneh text-right">جان
+                                                                        شیفته</div>
+                                                                <div class=" color-daneh text-left">۶۶٪</div>
+                                                        </div>
+                                                        <p class="text-right">رومن رولان</p>
+                                                </div>
                                         </div>
-                                    </div>
+
+
+                                        {{-- مطالعه کرده --}}
                                 </div>
-                                <div class="">
-                                    <p class=" mb-0 text-muted">فئودور داستایوفسکی</p>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">
+                                
+                                        <div class="d-flex flex-row mb-3">
+                                                        @foreach ($reading as $reading_book)
+                                                        <div class="p-1 m-1  w-25">
+                                                                <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
+                                                                        class="book-thumbnail" alt="">
+                                                                <div class="d-flex flex-row-reverse">
+                                                                        <div class="flex-fill color-daneh text-right">نان
+                                                                                و سیاست</div>
+                                                                        <div class=" color-daneh text-left">۶۶٪</div>
+                                                                </div>
+                                                                <p class="text-right">فئودور داستایوفسکی</p>
+                                                        </div>
+                                                        @endforeach
+        
+        
+                                                </div>
+
                                 </div>
-                            </div>
-                            <div class="w-30">
-                                <a href="#" class="btn btn-sm btn-outline-kioosk"> دنبال کردن</a>
-                            </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">...</div>
+                        </div>
+                </div>
+                <div class="col-4">
+                        {{-- Side bar --}}
+
+
+                        <div class="d-flex flex-row mb-3 rtl border-bottom">
+                                <div class="p-2 flex-fill text-right"><i class="far fa-user"></i> ۲۷ دنبال
+                                        کننده </div>
+                                <div class="p-2 flex-fill text-left"><i class="far fa-user"></i> ۴ کتاب
+                                </div>
+                        </div>
+
+
+                        <div class="p-2 border-bottom text-right mb-5">
+                                <p>هیس، از امشب من چگوارا هستم!</p>
+
+                                <p>تاریخ عضویت: ۱۳ مرداد ۱۳۹۶</p>
+                        </div>
+
+
+                        <div class="d-flex flex-row mb-3 rtl border-bottom text-muted">
+                                <div class="p-2 flex-fill text-right"><i class="fas fa-star"></i> ۳۲۰ امتیاز داده شده
+                                </div>
+                                <div class="p-2 flex-fill text-left"><a href="#" class="text-muted">دیدن همه</a>
+                                </div>
+                        </div>
+
+                        <div class="d-flex flex-row mb-3">
+                                <div class="p-1 m-1 flex-fill ">
+                                        <img src="{{ URL::asset('images/books/-1549109766book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
+
+                                </div>
+                                <div class="p-1 m-1 flex-fill ">
+                                        <img src="{{ URL::asset('images/books/-1549109737book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
+
+                                </div>
+                                <div class="p-1 m-1 flex-fill ">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class="book-sidebar-thumbnail" alt="">
+
+                                </div>
+
 
                         </div>
 
-                        <div class="d-flex align-items-center">
-                            <div class="w-25">
-                                <img src="images/books/1.jpg" class="w-100 rounded-lg p-1" alt="">
-                            </div>
-                            <div class="d-flex flex-column flex-fill justify-content-between  ">
-                                <div class="">
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <p class=" mb-2 font-weight-bold">امیرمسعود مهرابیان</p>
+
+
+                        {{-- نقد نوشته شده --}}
+                        <div class="d-flex flex-row  mb-3 rtl border-bottom text-muted">
+                                <div class="p-2 flex-fill text-right"><i class="fas fa-comments"></i> ۴۱ نقد نوشته شده
+                                </div>
+                                <div class="p-2 flex-fill text-left"><a href="#" class="text-muted">دیدن همه</a>
+                                </div>
+                        </div>
+
+                        <div class="d-flex flex-row mb-3 rtl  align-items-center profile-sidebar-review">
+                                <div class=" d-flex p-2 bd-highlight w-25  flex-column">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class=" book-sidebar-review-thumbnail  " alt="">
+                                </div>
+                                <div class="d-flex flex-fill w-75  flex-column bd-highlight mb-3 text-right">
+                                        <div class=" flex-grow-1 bd-highlight">
+                                                <p class="font-weight-bold m-0">بره ناقلا</p>
                                         </div>
-                                    </div>
+                                        <div class=" bd-highlight">توضیحاتی خلاصه و مختصر در مورد کتاب مذکور در این
+                                                قسمت قرار خواهد گرفت که به معرفی کتاب کمک خواهد کرد.</div>
                                 </div>
-                                <div class="">
-                                    <p class=" mb-0 text-muted">فئودور داستایوفسکی</p>
-                                </div>
-                            </div>
-                            <div class="w-30">
-                                <a href="#" class="btn btn-sm btn-outline-kioosk"> دنبال کردن</a>
-                            </div>
-
                         </div>
-                    </div>
-                    <!-- <div class="">
+
+                        <div class="d-flex flex-row mb-3 rtl  align-items-center">
+                                <div class=" d-flex p-2 bd-highlight w-25 flex-column">
+                                        <img src="{{ URL::asset('images/books/-1549110209book.jpg') }}"
+                                                class=" book-sidebar-review-thumbnail w-100" alt="">
+                                </div>
+                                <div class="d-flex flex-fill w-75  flex-column bd-highlight mb-3 text-right">
+                                        <div class=" flex-grow-1 bd-highlight">
+                                                <p class="font-weight-bold m-0">بره ناقلا</p>
+                                        </div>
+                                        <div class=" bd-highlight">توضیحاتی خلاصه و مختصر در مورد کتاب مذکور در این
+                                                قسمت قرار خواهد گرفت که به معرفی کتاب کمک خواهد کرد.</div>
+                                </div>
+                        </div>
+                        {{-- نقد نوشته شده --}}
+                        {{-- Side bar --}}
 
 
-                    </div> -->
                 </div>
 
-
-            </div>
         </div>
-    </div>
+</div>
 
 @endsection
 
