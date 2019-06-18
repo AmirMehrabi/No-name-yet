@@ -15,6 +15,11 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/profile', 'PagesController@profile');
 
+Route::get('/writer', 'PagesController@writer');
+
+Route::get('/publisher', 'PagesController@publisher');
+
+
 Route::get('/search', 'SearchController@show');
 
 Route::view('scan', 'scan');
