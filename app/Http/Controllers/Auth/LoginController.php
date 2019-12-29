@@ -59,8 +59,9 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback()
-    {
-
+    { 
+      // dd(Socialite::driver('google')->user());
+      
           try {
             $user = Socialite::driver('google')->user();
           } catch (\Exception $e) {
